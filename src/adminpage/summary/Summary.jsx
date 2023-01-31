@@ -5,7 +5,6 @@ import SummaryCard from "./summaryCard/SummaryCard";
 export default function Summary() {
   return (
     <>
-      <div className={styles.mainTitle}>ADMIN</div>
       <div className={styles.container}>
         <div className={styles.products}>
           제품 보기

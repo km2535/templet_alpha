@@ -13,7 +13,6 @@ export default function AdminRoomList() {
   }, []);
   return (
     <>
-      <div className={styles.mainTitle}>ADMIN</div>
       <div className={styles.roomContainer}>
         <div className={styles.title}>상품 목록</div>
         <div className={styles.products}>
