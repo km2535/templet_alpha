@@ -9,6 +9,7 @@
 - "react-router-dom" (페이지 생성)
 - "uuid"(고유 id 생성)
 - "react-countup"(카운트 업 효과 적용)
+- "react-paginate" (페이지네이션 효과)
 ## 버전
 ### 1.0.0 
 - 어드민 product 완성

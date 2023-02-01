@@ -38,7 +38,7 @@ export default function AdminNavbar() {
           <li
             className={styles.gnbTitle}
             onClick={() =>
-              navigate(process.env.REACT_APP_API_ADMIN_NOTICELIST_URL)
+              navigate(process.env.REACT_APP_API_ADMIN_BOARDLIST_URL)
             }
           >
             notice

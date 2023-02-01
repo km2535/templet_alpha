@@ -1,4 +1,4 @@
-export const updateService = async (product) => {
+export const updateService = async (service) => {
   const {
     ID,
     TITLE,
@@ -8,7 +8,7 @@ export const updateService = async (product) => {
     SUMMATION_DESCRIPTIONS,
     THUMBNAIL_IMG,
     IMAGE_URLS,
-  } = product;
+  } = service;
 
   const formData = new FormData();
   formData.append("ID", ID);

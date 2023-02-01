@@ -1,5 +1,5 @@
-export const serviceImgUpload = async (file, product) => {
-  const { ID } = product;
+export const serviceImgUpload = async (file, service) => {
+  const { ID } = service;
   for (let i = 0; i < file.length; i++) {
     const formData = new FormData();
     formData.append("fileId", ID);

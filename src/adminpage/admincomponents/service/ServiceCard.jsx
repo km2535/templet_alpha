@@ -1,14 +1,14 @@
 import React from "react";
 import { AiFillCloseSquare } from "react-icons/ai";
 import { useNavigate } from "react-router-dom";
-import { readProducts } from "../../../api/products/readProducts";
-import { removeProduct } from "../../../api/products/removeProduct";
-import { removeProductImg } from "../../../api/products/removeProductImg";
 import { v4 as uuidv4 } from "uuid";
 import Summation from "../../../ui/Summation";
 import styles from "./ServiceCard.module.css";
+import { readService } from "../../../api/service/readService";
+import { removeService } from "../../../api/service/removeService";
+import { removeServiceImg } from "../../../api/service/removeServiceImg";
 
-export default function ServiceCard({ product, isAdmin, setProducts }) {
+export default function ServiceCard({ service, isAdmin, setService }) {
   const navigate = useNavigate();
   const {
     TITLE,
@@ -16,12 +16,12 @@ export default function ServiceCard({ product, isAdmin, setProducts }) {
     THUMBNAIL_IMG,
     SUMMATION_DESCRIPTIONS,
     DETAIL_DESCRIPTION,
-  } = product;
+  } = service;
   const removeHandler = () => {
     if (window.confirm("정말 삭제하시겠습니까?")) {
-      removeProduct(product)
-        .then(() => removeProductImg(product))
-        .finally(() => readProducts(setProducts));
+      removeService(service)
+        .then(() => removeServiceImg(service))
+        .finally(() => readService(setService));
     }
   };
   return (
@@ -30,7 +30,7 @@ export default function ServiceCard({ product, isAdmin, setProducts }) {
         className={styles.imgContent}
         onClick={() => {
           navigate(process.env.REACT_APP_API_ADMIN_SERVICEDIT_URL + `/${ID}`, {
-            state: { product },
+            state: { service },
           });
         }}
       >

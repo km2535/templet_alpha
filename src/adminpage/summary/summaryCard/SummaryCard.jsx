@@ -5,6 +5,8 @@ import styles from "./SummaryCard.module.css";
 import CountUp from "react-countup";
 import { useRef } from "react";
 import { useNavigate } from "react-router-dom";
+import { readService } from "../../../api/service/readService";
+import { readBoardSumm } from "../../../api/board/readBoardSumm";
 
 export default function SummaryCard({ serviceName }) {
   const [serviceContent, setServiceContent] = useState([]);
@@ -18,10 +20,12 @@ export default function SummaryCard({ serviceName }) {
         setDetailLink(process.env.REACT_APP_API_ADMIN_ROOMLIST_URL);
         break;
       case "service":
+        readService(setServiceContent);
         setDetailLink(process.env.REACT_APP_API_ADMIN_SERVICELIST_URL);
         break;
       case "notice":
-        setDetailLink(process.env.REACT_APP_API_ADMIN_NOTICELIST_URL);
+        readBoardSumm(setServiceContent);
+        setDetailLink(process.env.REACT_APP_API_ADMIN_BOARDLIST_URL);
         break;
       case "qna":
         setDetailLink(process.env.REACT_APP_API_ADMIN_QNALIST_URL);

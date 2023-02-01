@@ -1,5 +1,5 @@
-export const removeServiceImgOnce = async (product) => {
-  const { id, fileName } = product;
+export const removeServiceImgOnce = async (service) => {
+  const { id, fileName } = service;
   const formData = new FormData();
   formData.append("fileId", id);
   formData.append("fileName", fileName);

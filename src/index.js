@@ -20,6 +20,10 @@ import AddRoom from "./adminpage/room/addroom/AddRoom";
 import AdminServiceList from "./adminpage/service/servicelist/AdminServiceList";
 import AddService from "./adminpage/service/addservice/AddService";
 import AdminServiceEdit from "./adminpage/service/serviceedit/AdminServiceEdit";
+import AdminBoardList from "./adminpage/board/boardlist/AdminBoardList";
+import AddBoard from "./adminpage/board/addboard/AddBoard";
+import AdminBoardEdit from "./adminpage/board/boardedit/AdminBoardEdit";
+import BoardDetail from "./components/board/boardDetail/BoardDetail";
 
 const router = createBrowserRouter([
   {
@@ -56,6 +60,12 @@ const router = createBrowserRouter([
           {
             path: process.env.REACT_APP_API_SUB_OPTION_FOUR_URL,
             element: <Notice />,
+            children: [
+              {
+                path: process.env.REACT_APP_API_BOARD_DETAIL_URL + "/:id",
+                element: <BoardDetail />,
+              },
+            ],
           },
           {
             path: process.env.REACT_APP_API_SUB_OPTION_FIVE_URL,
@@ -97,6 +107,28 @@ const router = createBrowserRouter([
           {
             path: process.env.REACT_APP_API_ADMIN_SERVICEDIT_URL + "/:id",
             element: <AdminServiceEdit />,
+          },
+          {
+            path: process.env.REACT_APP_API_ADMIN_BOARDLIST_URL,
+            element: <AdminBoardList />,
+          },
+
+          {
+            path: process.env.REACT_APP_API_ADMIN_ADDBOARD_URL,
+            element: <AddBoard />,
+          },
+          {
+            path:
+              process.env.REACT_APP_API_ADMIN_BOARDLIST_URL +
+              "/" +
+              process.env.REACT_APP_API_BOARD_DETAIL_URL +
+              "/:id",
+            //admin 여부 확인하여 경로 보호하기
+            element: <BoardDetail isAdmin={true} />,
+          },
+          {
+            path: process.env.REACT_APP_API_ADMIN_BOARDEDIT_URL + "/:id",
+            element: <AdminBoardEdit />,
           },
         ],
       },
