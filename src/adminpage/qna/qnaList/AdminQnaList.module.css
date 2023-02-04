@@ -1,0 +1,17 @@
+.container{
+  width: 1200px;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+}
+.addIcon{
+  text-align: right;
+}
+.icon{
+  width: max-content;
+  cursor: pointer;
+  font-size: 20px;
+}
+.icon:hover{
+  color: var(--main-font-strong-color);
+}

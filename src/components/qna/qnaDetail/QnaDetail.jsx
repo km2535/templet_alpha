@@ -1,17 +1,12 @@
-import React from "react";
-import { useState } from "react";
-import { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
-import Button from "../../../adminpage/ui/Button";
-import styles from "./BoardDetail.module.css";
 import { v4 as uuidv4 } from "uuid";
-import { readBoardDetail } from "../../../api/board/readBoardDetail";
-import { removeBoardItem } from "../../../api/board/removeBoardItem";
-import { removeBoardFile } from "../../../api/board/removeBoardFile";
-import { removeBoardImg } from "../../../api/board/removeBoardImg";
-import { updateBoardReadCnt } from "../../../api/board/updateBoardReadCnt";
+import Button from "../../../adminpage/ui/Button";
+import { readQnaDetail } from "../../../api/qna/readQnaDetail";
+import { updateQnaReadCnt } from "../../../api/qna/updateQnaReadCnt";
+import styles from "./QnaDetail.module.css";
 
-export default function BoardDetail({ isAdmin }) {
+export default function QnaDetail({ isAdmin }) {
   const navigate = useNavigate();
   const {
     state: {
@@ -24,10 +19,10 @@ export default function BoardDetail({ isAdmin }) {
   const [boardItem, setBoardItem] = useState([]);
   const [description, setDescription] = useState([]);
   useEffect(() => {
-    readBoardDetail({ ID, setBoard }).then(
+    readQnaDetail({ ID, setBoard }).then(
       () =>
         isAdmin ||
-        updateBoardReadCnt({ ID, READ_CNT: Number(READ_CNT) + 1, DATE })
+        updateQnaReadCnt({ ID, READ_CNT: Number(READ_CNT) + 1, DATE })
     );
   }, [ID, READ_CNT, DATE, isAdmin]);
   useEffect(() => {
@@ -50,11 +45,11 @@ export default function BoardDetail({ isAdmin }) {
   };
   const deleteHandler = () => {
     if (window.confirm("정말삭제하시겠습니까?")) {
-      removeBoardItem(boardItem)
-        .then(() => {
-          removeBoardFile(boardItem).then(() => removeBoardImg(boardItem));
-        })
-        .finally(() => navigate(-1));
+      // removeBoardItem(boardItem)
+      //   .then(() => {
+      //     removeBoardFile(boardItem).then(() => removeBoardImg(boardItem));
+      //   })
+      //   .finally(() => navigate(-1));
     }
   };
   const goBack = () => {

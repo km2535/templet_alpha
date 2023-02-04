@@ -24,6 +24,10 @@ import AdminBoardList from "./adminpage/board/boardlist/AdminBoardList";
 import AddBoard from "./adminpage/board/addboard/AddBoard";
 import AdminBoardEdit from "./adminpage/board/boardedit/AdminBoardEdit";
 import BoardDetail from "./components/board/boardDetail/BoardDetail";
+import AdminQnaList from "./adminpage/qna/qnaList/AdminQnaList";
+import AddQna from "./adminpage/qna/addQna/AddQna";
+import AdminQnaEdit from "./adminpage/qna/qnaEdit/AdminQnaEdit";
+import QnaDetail from "./components/qna/qnaDetail/QnaDetail";
 
 const router = createBrowserRouter([
   {
@@ -129,6 +133,28 @@ const router = createBrowserRouter([
           {
             path: process.env.REACT_APP_API_ADMIN_BOARDEDIT_URL + "/:id",
             element: <AdminBoardEdit />,
+          },
+          {
+            path: process.env.REACT_APP_API_ADMIN_QNALIST_URL,
+            element: <AdminQnaList />,
+          },
+
+          {
+            path: process.env.REACT_APP_API_ADMIN_ADDQNA_URL,
+            element: <AddQna />,
+          },
+          {
+            path:
+              process.env.REACT_APP_API_ADMIN_QNALIST_URL +
+              "/" +
+              process.env.REACT_APP_API_QNA_DETAIL_URL +
+              "/:id",
+            //admin 여부 확인하여 경로 보호하기
+            element: <QnaDetail isAdmin={true} />,
+          },
+          {
+            path: process.env.REACT_APP_API_ADMIN_QNAEDIT_URL + "/:id",
+            element: <AdminQnaEdit />,
           },
         ],
       },

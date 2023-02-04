@@ -5,14 +5,16 @@ import { useEffect } from "react";
 import { readBoardCnt } from "../../../api/board/readBoardCnt";
 import ReactPaginate from "react-paginate";
 import BoardListItems from "../boardListItems/BoardListItems";
+import { readQnaCnt } from "../../../api/qna/readQnaCnt";
 
-export default function BoardList() {
+export default function BoardList({ qna, notice }) {
   const [totalCnt, setTotalCnt] = useState(0);
   const [currentPage, setCurrentPage] = useState(1);
   //여기서 게시판의 데이터를 읽는다.
   useEffect(() => {
-    readBoardCnt(setTotalCnt);
-  }, []);
+    notice && readBoardCnt(setTotalCnt);
+    qna && readQnaCnt(setTotalCnt);
+  }, [notice, qna]);
 
   const handlePageClick = (e) => {
     setCurrentPage(e.selected + 1);
@@ -30,7 +32,12 @@ export default function BoardList() {
           </tr>
         </thead>
         <tbody className={styles.tbody}>
-          <BoardListItems page={currentPage} totalPage={totalCnt} />
+          <BoardListItems
+            qna={qna}
+            notice={notice}
+            page={currentPage}
+            totalPage={totalCnt}
+          />
         </tbody>
       </table>
       <ReactPaginate

@@ -1,6 +1,6 @@
 export const updateBoard = async (board) => {
   const { ID, WRITER, TITLE, DESCRIPTION, IMAGE_URLS, FILE_URLS } = board;
-  console.log(ID, WRITER, TITLE, DESCRIPTION, IMAGE_URLS, FILE_URLS);
+
   const formData = new FormData();
   formData.append("ID", ID);
   formData.append("WRITER", WRITER);

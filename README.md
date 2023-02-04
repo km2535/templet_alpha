@@ -10,9 +10,10 @@
 - "uuid"(고유 id 생성)
 - "react-countup"(카운트 업 효과 적용)
 - "react-paginate" (페이지네이션 효과)
+-  "crypto-js" (패스워드 암호화 및 복호화)
 ## 버전
 ### 1.0.0 
 - 어드민 product 완성
 - 어드민 service 완성
-- 어드민 notice 작성중
-  - CRUD 완성, 조회 기능 작성중.
+- 어드민 notice 완성
+- 어드민 qna 작성중
