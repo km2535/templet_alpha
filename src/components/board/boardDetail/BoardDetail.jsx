@@ -6,6 +6,9 @@ import Button from "../../../adminpage/ui/Button";
 import styles from "./BoardDetail.module.css";
 import { v4 as uuidv4 } from "uuid";
 import { readBoardDetail } from "../../../api/board/readBoardDetail";
+import { removeBoardItem } from "../../../api/board/removeBoardItem";
+import { removeBoardFile } from "../../../api/board/removeBoardFile";
+import { removeBoardImg } from "../../../api/board/removeBoardImg";
 
 export default function BoardDetail({ isAdmin }) {
   const navigate = useNavigate();
@@ -42,7 +45,11 @@ export default function BoardDetail({ isAdmin }) {
   };
   const deleteHandler = () => {
     if (window.confirm("정말삭제하시겠습니까?")) {
-      console.log(ID, "삭제");
+      removeBoardItem(boardItem)
+        .then(() => {
+          removeBoardFile(boardItem).then(() => removeBoardImg(boardItem));
+        })
+        .finally(() => navigate(-1));
     }
   };
   const goBack = () => {
