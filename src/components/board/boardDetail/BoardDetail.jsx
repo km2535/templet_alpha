@@ -18,7 +18,7 @@ export default function BoardDetail({ isAdmin }) {
   const [imgUrl, setImgUrl] = useState([]);
   const [board, setBoard] = useState([]);
   const [boardItem, setBoardItem] = useState([]);
-
+  const [description, setDescription] = useState([]);
   useEffect(() => {
     readBoardDetail(ID, setBoard);
   }, [ID]);
@@ -30,6 +30,11 @@ export default function BoardDetail({ isAdmin }) {
     boardItem?.FILE_URLS && setFileUrl(boardItem?.FILE_URLS.split(","));
     boardItem?.IMAGE_URLS && setImgUrl(boardItem?.IMAGE_URLS.split(","));
   }, [boardItem]);
+  useEffect(() => {
+    setDescription(
+      boardItem?.DESCRIPTION && boardItem?.DESCRIPTION.split("<br/>")
+    );
+  }, [boardItem?.DESCRIPTION]);
   const goEdit = () => {
     navigate(`${process.env.REACT_APP_API_ADMIN_BOARDEDIT_URL}/${ID}`, {
       state: { boardItem },
@@ -101,7 +106,8 @@ export default function BoardDetail({ isAdmin }) {
           </tr>
           <tr>
             <td colSpan={4} className={styles.description}>
-              {boardItem?.DESCRIPTION}
+              {description &&
+                description?.map((desc) => <div key={uuidv4()}>{desc}</div>)}
             </td>
             <td></td>
             <td></td>

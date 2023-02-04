@@ -21,6 +21,7 @@ export default function AdminBoardEdit() {
   const [file, setFile] = useState([]);
   const [previewFile, setPreviewFile] = useState([]);
   const [previewImg, setPreviewImg] = useState([]);
+  const [description, setDescription] = useState([]);
   const {
     state: {
       boardItem: {
@@ -93,6 +94,10 @@ export default function AdminBoardEdit() {
     );
   }, [ID, IMAGE_URLS]);
 
+  useEffect(() => {
+    setDescription(DESCRIPTION && DESCRIPTION.replaceAll("<br/>", "\n"));
+  }, [DESCRIPTION]);
+
   const changeHandler = (e) => {
     const { id, value, files } = e.target;
     if (id === "files") {
@@ -129,8 +134,13 @@ export default function AdminBoardEdit() {
           setImgFiles((prev) => [...prev, files[i]]);
         }
       }
+    } else if (id === "DESCRIPTION") {
+      setBoard((prev) => ({
+        ...prev,
+        [id]: value?.replaceAll("\n", "<br/>"),
+      }));
     } else {
-      setBoard((product) => ({ ...product, [id]: value }));
+      setBoard((prev) => ({ ...prev, [id]: value }));
     }
   };
   const removeFile = (e) => {
@@ -149,7 +159,6 @@ export default function AdminBoardEdit() {
   const removeImg = (e) => {
     const { id } = e.target;
     const fileName = e.target.parentElement.id;
-    console.log(fileName);
     setFile((prev) => [...prev].filter((v) => v.lastModified !== Number(id)));
     setPreviewImg((prev) =>
       [...prev].filter((v) => v.lastModified !== Number(id))
@@ -187,7 +196,7 @@ export default function AdminBoardEdit() {
                 <input
                   type={"text"}
                   id="TITLE"
-                  placeholder={TITLE}
+                  defaultValue={TITLE}
                   className={styles.titleInput}
                   onChange={changeHandler}
                 />
@@ -209,12 +218,13 @@ export default function AdminBoardEdit() {
                     multiple={"multiple"}
                     onChange={changeHandler}
                   />
-                  <div className={styles.uploadContainer}>
-                    <div className={styles.imgList}>
+                  <div className={styles.uploadFileContainer}>
+                    <div className={styles.fileList}>
                       {previewFile?.map((v) => (
-                        <div key={v.uuid} className={styles.imgContent}>
-                          <div className={styles.imgs}>{v?.name}</div>
+                        <div key={v.uuid} className={styles.fileContent}>
+                          <div className={styles.files}>{v?.name}</div>
                           <AiOutlineCloseSquare
+                            className={styles.removeIcon}
                             id={v.lastModified}
                             onClick={removeFile}
                           />
@@ -261,6 +271,7 @@ export default function AdminBoardEdit() {
                             <img src={v?.url} alt="" className={styles.img} />
                           </div>
                           <AiOutlineCloseSquare
+                            className={styles.removeIcon}
                             id={v.lastModified}
                             onClick={removeImg}
                           />
@@ -278,10 +289,11 @@ export default function AdminBoardEdit() {
               <td colSpan={4} className={styles.description}>
                 <textarea
                   type={"text"}
-                  placeholder={DESCRIPTION}
+                  defaultValue={description}
                   id="DESCRIPTION"
                   className={styles.detailInput}
-                  cols="50"
+                  rows="10"
+                  maxLength="500"
                   onChange={changeHandler}
                 />
               </td>
@@ -297,7 +309,12 @@ export default function AdminBoardEdit() {
           </div>
 
           <div>
-            <Button title="목록" sub={true} type={"button"} callback={goBack} />
+            <Button
+              title="돌아가기"
+              sub={true}
+              type={"button"}
+              callback={goBack}
+            />
           </div>
         </div>
       </div>

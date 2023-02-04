@@ -21,14 +21,14 @@ export default function BoardItem({ Item, index, page, totalPage }) {
     }
   }, [totalPage, index, page]);
   return (
-    <tr className={styles.container}>
-      <td>{boardNum}</td>
-      <td id={ID} onClick={clickHandler}>
+    <tr className={styles.tbodyTr}>
+      <td className={styles.tdNum}>{boardNum}</td>
+      <td className={styles.tdTitle} id={ID} onClick={clickHandler}>
         {TITLE}
       </td>
-      <td>{WRITER}</td>
-      <td>{READ_CNT}</td>
-      <td>{DATE}</td>
+      <td className={styles.tdWriter}>{WRITER}</td>
+      <td className={styles.tdReadCnt}>{READ_CNT}</td>
+      <td className={styles.tdDate}>{DATE}</td>
     </tr>
   );
 }

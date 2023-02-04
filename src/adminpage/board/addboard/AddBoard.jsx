@@ -113,120 +113,130 @@ export default function AddBoard() {
   };
   return (
     <form onSubmit={boardSubmit} id="formdata" className={styles.form}>
-      <table>
-        <thead>
-          <tr>
-            <th>제목</th>
-            <th>작성자</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>
-              <div className={styles.titleContainer}>
-                <input
-                  type={"text"}
-                  id="TITLE"
-                  className={styles.titleInput}
-                  required
-                  onChange={changeHandler}
-                  placeholder="제목을 입력하세요"
-                />
-              </div>
-            </td>
-            <td>관리자</td>
-          </tr>
-          <tr>
-            <td colSpan={2}>
-              <div>
-                <div>
-                  <div>파일 추가하기</div>
+      <div className={styles.container}>
+        <table className={styles.table}>
+          <thead className={styles.thead}>
+            <tr className={styles.theadTr}>
+              <th className={styles.thTitle}>제목</th>
+              <th className={styles.thWriter}>작성자</th>
+            </tr>
+          </thead>
+          <tbody className={styles.tbody}>
+            <tr className={styles.tbodyTr}>
+              <td className={styles.tdTitle}>
+                <div className={styles.titleContainer}>
+                  <input
+                    type={"text"}
+                    id="TITLE"
+                    className={styles.titleInput}
+                    required
+                    onChange={changeHandler}
+                    placeholder="제목을 입력하세요"
+                  />
                 </div>
-                <input
-                  type={"file"}
-                  id="files"
-                  accept=".pdf, .hwp, .show, .xlsx, .xlsm,.xlsb, .xls,  .doc, .hwpx, .ppt, .pptm, .pptx, .txt"
-                  name="files[]"
-                  multiple={"multiple"}
-                  onChange={changeHandler}
-                />
-                <div className={styles.uploadContainer}>
-                  <div className={styles.imgList}>
-                    {previewFile.map((v) => (
-                      <div key={v.uuid} className={styles.imgContent}>
-                        <div className={styles.imgs}>{v?.name}</div>
-                        <AiOutlineCloseSquare
-                          id={v.lastModified}
-                          onClick={removeFile}
-                        />
-                      </div>
-                    ))}
-                  </div>
-                </div>
-                <label className={styles.plusBtn} htmlFor="files">
-                  <FaPlusSquare />
-                </label>
-              </div>
-            </td>
-            <td></td>
-          </tr>
-          <tr>
-            <td colSpan={2}>
-              <div>
-                <div>
-                  <div>이미지 추가하기</div>
-                </div>
-                <input
-                  type={"file"}
-                  id="images"
-                  name="files[]"
-                  accept="image/*"
-                  multiple={"multiple"}
-                  onChange={changeHandler}
-                />
-                <div className={styles.uploadContainer}>
-                  <div className={styles.imgList}>
-                    {previewImg.map((v) => (
-                      <div key={v.uuid} className={styles.imgContent}>
-                        <div className={styles.imgs}>
-                          <img src={v?.url} alt="" className={styles.img} />
+              </td>
+              <td className={styles.tdWriter}>관리자</td>
+            </tr>
+            <tr className={styles.downloadTr}>
+              <td colSpan={2}>
+                <div className={styles.downloadFile}>
+                  <div className={styles.downloadTitle}>파일 추가하기</div>
+                  <input
+                    className={styles.inputFile}
+                    type={"file"}
+                    id="files"
+                    accept=".pdf, .hwp, .show, .xlsx, .xlsm,.xlsb, .xls,  .doc, .hwpx, .ppt, .pptm, .pptx, .txt"
+                    name="files[]"
+                    multiple={"multiple"}
+                    onChange={changeHandler}
+                  />
+                  <div className={styles.uploadContainer}>
+                    <div className={styles.fileList}>
+                      {previewFile.map((v) => (
+                        <div key={v.uuid} className={styles.fileContent}>
+                          <div className={styles.files}>{v?.name}</div>
+                          <AiOutlineCloseSquare
+                            className={styles.removeIcon}
+                            id={v.lastModified}
+                            onClick={removeFile}
+                          />
                         </div>
-                        <AiOutlineCloseSquare
-                          id={v.lastModified}
-                          onClick={removeImg}
-                        />
-                      </div>
-                    ))}
+                      ))}
+                    </div>
+                  </div>
+                  <label className={styles.plusBtn} htmlFor="files">
+                    <FaPlusSquare />
+                  </label>
+                </div>
+              </td>
+              <td></td>
+            </tr>
+            <tr>
+              <td colSpan={2}>
+                <div>
+                  <div className={styles.downloadFile}>
+                    <div className={styles.downloadTitle}>이미지 추가하기</div>
+                    <label className={styles.plusBtn} htmlFor="images">
+                      <FaPlusSquare />
+                    </label>
+                  </div>
+                  <input
+                    className={styles.inputFile}
+                    type={"file"}
+                    id="images"
+                    name="files[]"
+                    accept="image/*"
+                    multiple={"multiple"}
+                    onChange={changeHandler}
+                  />
+                  <div className={styles.uploadContainer}>
+                    <div className={styles.imgList}>
+                      {previewImg.map((v) => (
+                        <div key={v.uuid} className={styles.imgContent}>
+                          <div className={styles.imgs}>
+                            <img src={v?.url} alt="" className={styles.img} />
+                          </div>
+                          <AiOutlineCloseSquare
+                            id={v.lastModified}
+                            onClick={removeImg}
+                          />
+                        </div>
+                      ))}
+                    </div>
                   </div>
                 </div>
-                <label className={styles.plusBtn} htmlFor="images">
-                  <FaPlusSquare />
-                </label>
-              </div>
-            </td>
-            <td></td>
-          </tr>
-          <tr>
-            <td colSpan={2}>
-              <div>
-                <textarea
-                  type={"text"}
-                  placeholder="제품의 상세내용을 작성해주세요"
-                  id="DESCRIPTION"
-                  className={styles.detailInput}
-                  cols="50"
-                  required
-                  onChange={changeHandler}
-                />
-              </div>
-            </td>
-            <td></td>
-          </tr>
-        </tbody>
-      </table>
-      <div className={styles.btn}>
-        <Button title="작성하기" type={"submit"} />
-        <Button title="돌아가기" sub={true} type={"button"} callback={goBack} />
+              </td>
+              <td></td>
+            </tr>
+            <tr>
+              <td colSpan={2} className={styles.description}>
+                <div>
+                  <textarea
+                    type={"text"}
+                    placeholder="제품의 상세내용을 작성해주세요"
+                    id="DESCRIPTION"
+                    className={styles.detailInput}
+                    cols="50"
+                    required
+                    onChange={changeHandler}
+                  />
+                </div>
+              </td>
+              <td></td>
+            </tr>
+          </tbody>
+        </table>
+        <div className={styles.btnContainer}>
+          <div className={styles.btn}>
+            <Button title="작성하기" type={"submit"} />
+            <Button
+              title="돌아가기"
+              sub={true}
+              type={"button"}
+              callback={goBack}
+            />
+          </div>
+        </div>
       </div>
     </form>
   );

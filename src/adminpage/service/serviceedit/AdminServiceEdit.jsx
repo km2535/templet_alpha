@@ -160,7 +160,7 @@ export default function AdminServiceEdit() {
             id="TITLE"
             className={styles.titleInput}
             onChange={changeHandler}
-            placeholder={TITLE}
+            defaultValue={TITLE}
           />
         </div>
         <div className={styles.imgContainer}>
@@ -201,7 +201,7 @@ export default function AdminServiceEdit() {
           </div>
           <textarea
             type={"text"}
-            placeholder={DETAIL_DESCRIPTION}
+            defaultValue={DETAIL_DESCRIPTION}
             id="DETAIL_DESCRIPTION"
             className={styles.detailInput}
             onChange={changeHandler}
@@ -214,7 +214,7 @@ export default function AdminServiceEdit() {
           <input
             className={styles.serviceInput}
             type={"text"}
-            placeholder={PROVIDE_SERVICE}
+            defaultValue={PROVIDE_SERVICE}
             id="PROVIDE_SERVICE"
             onChange={changeHandler}
           />
@@ -227,7 +227,7 @@ export default function AdminServiceEdit() {
             className={styles.priceInput}
             onChange={changeHandler}
             type={"text"}
-            placeholder={PRICE}
+            defaultValue={PRICE}
             id="PRICE"
           />
         </div>
