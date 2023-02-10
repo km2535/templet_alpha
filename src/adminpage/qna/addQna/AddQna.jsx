@@ -142,7 +142,7 @@ export default function AddQna() {
                   />
                 </div>
               </td>
-              <td className={styles.tdWriter}>관리자</td>
+              <td className={styles.tdWriter}>km2535@naver.com</td>
               <td className={styles.tdPassword}>
                 <div className={styles.pwContainer}>
                   <div className={styles.pwTitle}>비빌번호 : </div>
@@ -160,7 +160,7 @@ export default function AddQna() {
               </td>
             </tr>
             <tr className={styles.downloadTr}>
-              <td colSpan={2}>
+              <td colSpan={3}>
                 <div className={styles.downloadFile}>
                   <div className={styles.downloadTitle}>파일 추가하기</div>
                   <input
@@ -194,7 +194,7 @@ export default function AddQna() {
               <td></td>
             </tr>
             <tr>
-              <td colSpan={2}>
+              <td colSpan={3}>
                 <div>
                   <div className={styles.downloadFile}>
                     <div className={styles.downloadTitle}>이미지 추가하기</div>
@@ -231,7 +231,7 @@ export default function AddQna() {
               <td></td>
             </tr>
             <tr>
-              <td colSpan={2} className={styles.description}>
+              <td colSpan={3} className={styles.description}>
                 <div>
                   <textarea
                     type={"text"}

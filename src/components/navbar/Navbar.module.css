@@ -1,10 +1,17 @@
-.container{
+
+.container, .containerWhite{
   display: flex;
-  padding: 20px;
+  padding: 10px 20px;
   width: 98vw;
+  height: 100px;
   justify-content: space-between;
   position: fixed;
   align-items: center;
+  transition: background-color .3s;
+}
+.containerWhite{
+  background-color: var(--navi-white-color);
+  backdrop-filter: blur(20px);
 }
 .menu{
   font-size: 40px;
@@ -52,4 +59,18 @@
   text-transform: uppercase;
   font-size: 24px;
   cursor: pointer;
+}
+.profile{
+  display: flex;
+  cursor: default;
+  font-size: 18px;
+  align-items: center;
+  cursor: default;
+}
+.edit,.logout{
+  cursor: pointer;
+  margin-right: 10px;
+}
+.logout:hover{
+  color: var( --main-font-strong-color);
 }

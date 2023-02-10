@@ -1,8 +1,8 @@
-export const removeProductImg = async (qna) => {
+export const removeQnaFile = async (qna) => {
   const { ID } = qna;
   const formData = new FormData();
   formData.append("fileId", ID);
-  await fetch(`${process.env.REACT_APP_API_QNA_URL}/removeQnaFiles.php`, {
+  await fetch(`${process.env.REACT_APP_API_QNA_URL}/removeQnaFile.php`, {
     method: "POST",
     body: formData,
   })

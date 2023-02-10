@@ -1,10 +1,17 @@
 import React from "react";
+import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import { useAuthContext } from "../../context/AuthContextProvider";
+import { AiOutlineHome } from "react-icons/ai";
+import { IoExitOutline } from "react-icons/io5";
 import styles from "./AdminNavbar.module.css";
 
 export default function AdminNavbar() {
   const navigate = useNavigate();
-
+  const { user } = useAuthContext();
+  useEffect(() => {
+    user.IsAdmin || navigate("/");
+  }, [navigate, user.IsAdmin]);
   return (
     <div className={styles.container}>
       <div
@@ -54,7 +61,15 @@ export default function AdminNavbar() {
         </ul>
       </div>
       <div className={styles.loggin}>
-        <div>로그인</div>
+        <div className={styles.profile}>
+          <div className={styles.home} onClick={() => navigate("/")}>
+            <AiOutlineHome />
+          </div>
+          {user.IsAdmin && (user?.NAME || user?.USER_EMAIL)}님 환영합니다.
+        </div>
+        <div className={styles.logout} onClick={() => navigate("/logout")}>
+          <IoExitOutline />
+        </div>
       </div>
     </div>
   );

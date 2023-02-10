@@ -1,9 +1,8 @@
-export const removeQna = async (qna, password) => {
-  const { ID } = qna;
+export const removeQnaItem = async (board) => {
+  const { ID } = board;
   const formData = new FormData();
   formData.append("ID", ID);
-  formData.append("PASSWORD", password);
-  await fetch(`${process.env.REACT_APP_API_QNA_URL}/removeQna.php`, {
+  await fetch(`${process.env.REACT_APP_API_QNA_URL}/removeQnaItem.php`, {
     method: "POST",
     body: formData,
   })

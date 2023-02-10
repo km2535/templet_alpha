@@ -37,7 +37,7 @@ export default function AdminBoardEdit() {
       boardItem,
     },
   } = useLocation();
-
+  console.log(boardItem);
   useEffect(() => {
     setBoard(boardItem);
   }, [boardItem]);

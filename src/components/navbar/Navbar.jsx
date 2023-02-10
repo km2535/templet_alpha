@@ -1,19 +1,44 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import { BiMenuAltLeft } from "react-icons/bi";
+import { AiFillEdit } from "react-icons/ai";
+import { IoExitOutline } from "react-icons/io5";
 import styles from "./Navbar.module.css";
 import { useState } from "react";
 import SideNavbar from "./SideNavbar";
+import { useAuthContext } from "../../context/AuthContextProvider";
+import { useRef } from "react";
+import { useEffect } from "react";
 
 export default function Navbar({ option }) {
+  const [navibarStyle, setNavibarStyle] = useState(false);
+  const { user } = useAuthContext();
+  const naviRef = useRef();
   const { main, sub } = option;
   const [side, setSide] = useState(false);
   const navigate = useNavigate();
   const toggleHandler = () => {
     setSide((prev) => !prev);
   };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll, { capture: true });
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+  const handleScroll = () => {
+    const scrollTop = window.scrollY;
+    const navHeight = naviRef.current.clientHeight;
+    scrollTop > navHeight / 2 && setNavibarStyle(true);
+    scrollTop < navHeight / 2 && setNavibarStyle(false);
+  };
   return (
-    <div className={styles.container}>
+    <div
+      className={navibarStyle ? styles.containerWhite : styles.container}
+      ref={naviRef}
+      id="naviContainer"
+    >
       <BiMenuAltLeft
         onClick={toggleHandler}
         className={sub ? styles.menuDark : styles.menu}
@@ -87,7 +112,21 @@ export default function Navbar({ option }) {
         </div>
       )}
       <div className={sub ? styles.logginDark : styles.loggin}>
-        <div>로그인</div>
+        {user ? (
+          <div className={styles.profile}>
+            {user.IsAdmin && (
+              <div className={styles.edit} onClick={() => navigate("/admin")}>
+                <AiFillEdit />
+              </div>
+            )}
+            {user?.NAME || user?.USER_EMAIL}님 환영합니다.
+            <div className={styles.logout} onClick={() => navigate("/logout")}>
+              <IoExitOutline />
+            </div>
+          </div>
+        ) : (
+          <div onClick={() => navigate("/login")}>로그인</div>
+        )}
       </div>
     </div>
   );

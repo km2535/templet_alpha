@@ -28,6 +28,10 @@ import AdminQnaList from "./adminpage/qna/qnaList/AdminQnaList";
 import AddQna from "./adminpage/qna/addQna/AddQna";
 import AdminQnaEdit from "./adminpage/qna/qnaEdit/AdminQnaEdit";
 import QnaDetail from "./components/qna/qnaDetail/QnaDetail";
+import Login from "./pages/login/Login";
+import ProtectedRoute from "./pages/protectPage/ProtectedRoute";
+import Logout from "./pages/logout/Logout";
+import AccessLogin from "./components/login/google/AccessLogin";
 
 const router = createBrowserRouter([
   {
@@ -78,8 +82,24 @@ const router = createBrowserRouter([
         ],
       },
       {
+        path: process.env.REACT_APP_API_LOGIN_URL,
+        element: <Login />,
+      },
+      {
+        path: process.env.REACT_APP_API_GOOGLE_REDIRECT_URL,
+        element: <AccessLogin />,
+      },
+      {
+        path: process.env.REACT_APP_API_LOGOUT_URL,
+        element: <Logout />,
+      },
+      {
         path: process.env.REACT_APP_API_ADMIN_URL,
-        element: <Admin />,
+        element: (
+          <ProtectedRoute requireAdmin>
+            <Admin />
+          </ProtectedRoute>
+        ),
         children: [
           {
             index: true,

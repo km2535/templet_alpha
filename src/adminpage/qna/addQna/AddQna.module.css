@@ -27,7 +27,7 @@
   height: 30px;
 }
 .thTitle, .tdTitle{
-  width: 60%;
+  width: 50%;
 }
 .thWriter,.tdWriter{
   width: 15%;
@@ -55,6 +55,7 @@
 .pwContainer{
   display: flex;
   align-items: center;
+  justify-content: flex-end;
 }
 .passwordInput{
   border: none;
