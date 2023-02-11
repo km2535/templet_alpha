@@ -25,6 +25,9 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+#root{
+  height: 100px;
+}
 :root{
   --main-font-color : #2F4858;
   --main-font-disabled-color: #6d737a;

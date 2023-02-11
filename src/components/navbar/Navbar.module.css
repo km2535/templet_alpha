@@ -1,8 +1,8 @@
 
 .container, .containerWhite{
   display: flex;
-  padding: 10px 20px;
-  width: 98vw;
+  padding: 10px 0;
+  width: 100%;
   height: 100px;
   justify-content: space-between;
   position: fixed;
@@ -12,6 +12,16 @@
 .containerWhite{
   background-color: var(--navi-white-color);
   backdrop-filter: blur(20px);
+  color: #fff;
+}
+.login{
+  margin-right: 10px;
+}
+.login:hover{
+  color: var(--main-font-strong-color);
+}
+.containerWhite .login ,.containerWhite .profile, .containerWhite .menuDark{
+  color: #fff;
 }
 .menu{
   font-size: 40px;
@@ -73,4 +83,42 @@
 }
 .logout:hover{
   color: var( --main-font-strong-color);
+}
+.mbLogo{
+  display: none;
+}
+
+@media screen and (max-width:1024px){
+  .navbar{
+    display: none;
+  }
+  .mbLogo{
+    display: block;
+  }
+  .logoContainer{
+    width: 200px;
+    height: 40px;
+  }
+  .profile,.login{
+    font-size: 16px;
+  }
+  .menuDark,.menu{
+    font-size: 30px;
+  }
+}
+@media screen and (max-width:768px){
+ .logoContainer{
+    width: 150px;
+    height: 30px;
+  }
+  .profile,.login{
+    font-size: 10px;
+  }
+  .edit{
+    margin: 0;
+    font-size: 14px;
+  }
+  .menuDark,.menu{
+    font-size: 24px;
+  }
 }

@@ -10,9 +10,11 @@ import { useNavigate } from "react-router-dom";
 import crypto from "crypto-js";
 import { uploadQnaFile } from "../../../api/qna/uploadQnaFile";
 import { uploadQna } from "../../../api/qna/uploadQna";
+import { useAuthContext } from "../../../context/AuthContextProvider";
 
 export default function AddQna() {
   const navigate = useNavigate();
+  const { user } = useAuthContext();
   const [board, setBoard] = useState([]);
   const [imgUrl, setImgUrl] = useState([]);
   const [imgFiles, setImgFiles] = useState([]);
@@ -20,11 +22,17 @@ export default function AddQna() {
   const [file, setFile] = useState([]);
   const [previewFile, setPreviewFile] = useState([]);
   const [previewImg, setPreviewImg] = useState([]);
+  console.log(board);
   useEffect(() => {
     const ID = uuidv4();
     //작성자는 로그인 한 사용자가 되도록 한다.
-    setBoard((prev) => ({ ...prev, ID: ID, WRITER: "km2535@naver.com" }));
-  }, []);
+    setBoard((prev) => ({
+      ...prev,
+      ID: ID,
+      WRITER: user?.NAME || user?.USER_EMAIL || "",
+    }));
+  }, [user?.NAME, user?.USER_EMAIL]);
+
   useEffect(() => {
     setBoard((prev) => ({ ...prev, FILE_URLS: fileUrl }));
   }, [fileUrl]);
@@ -87,7 +95,7 @@ export default function AddQna() {
     } else if (id === "PASSWORD") {
       setBoard((product) => ({
         ...product,
-        [id]: crypto.AES.encrypt(value, "km2535@naver.com").toString(),
+        [id]: crypto.AES.encrypt(value, board?.ID).toString(),
       }));
     } else {
       setBoard((product) => ({ ...product, [id]: value }));
@@ -142,7 +150,17 @@ export default function AddQna() {
                   />
                 </div>
               </td>
-              <td className={styles.tdWriter}>km2535@naver.com</td>
+              <td className={styles.tdWriter}>
+                <input
+                  type="text"
+                  id="WRITER"
+                  className={styles.titleInput}
+                  defaultValue={board.WRITER}
+                  placeholder="이름을 입력하세요"
+                  onChange={changeHandler}
+                  required
+                />
+              </td>
               <td className={styles.tdPassword}>
                 <div className={styles.pwContainer}>
                   <div className={styles.pwTitle}>비빌번호 : </div>

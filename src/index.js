@@ -32,6 +32,10 @@ import Login from "./pages/login/Login";
 import ProtectedRoute from "./pages/protectPage/ProtectedRoute";
 import Logout from "./pages/logout/Logout";
 import AccessLogin from "./components/login/google/AccessLogin";
+import QnaList from "./pages/qna/qnaList/QnaList";
+import NoticeList from "./pages/notice/noticeList/NoticeList";
+import ServiceFirst from "./pages/service/ServiceFirst/ServiceFirst";
+import ServiceDetail from "./pages/service/ServiceDetail/ServiceDetail";
 
 const router = createBrowserRouter([
   {
@@ -64,11 +68,25 @@ const router = createBrowserRouter([
           {
             path: process.env.REACT_APP_API_SUB_OPTION_THREE_URL,
             element: <Service />,
+            children: [
+              {
+                index: true,
+                element: <ServiceFirst />,
+              },
+              {
+                path: process.env.REACT_APP_API_SUB_OPTION_THREE_URL + "/:id",
+                element: <ServiceDetail />,
+              },
+            ],
           },
           {
             path: process.env.REACT_APP_API_SUB_OPTION_FOUR_URL,
             element: <Notice />,
             children: [
+              {
+                index: true,
+                element: <NoticeList />,
+              },
               {
                 path: process.env.REACT_APP_API_BOARD_DETAIL_URL + "/:id",
                 element: <BoardDetail />,
@@ -78,6 +96,20 @@ const router = createBrowserRouter([
           {
             path: process.env.REACT_APP_API_SUB_OPTION_FIVE_URL,
             element: <Qna />,
+            children: [
+              {
+                index: true,
+                element: <QnaList />,
+              },
+              {
+                path: process.env.REACT_APP_API_ADD_QNA_URL,
+                element: <AddQna />,
+              },
+              {
+                path: `${process.env.REACT_APP_API_QNA_DETAIL_URL}/:id`,
+                element: <QnaDetail />,
+              },
+            ],
           },
         ],
       },

@@ -1,9 +1,16 @@
-import React from "react";
-
+import React, { useEffect, useState } from "react";
+import { Outlet } from "react-router-dom";
+import { readService } from "../../api/service/readService";
+import styles from "./Service.module.css";
 export default function Service() {
+  const [service, setService] = useState([]);
+  useEffect(() => {
+    readService(setService);
+  }, []);
   return (
-    <div style={{ marginTop: "80px", position: "absolute", zIndex: "-1" }}>
-      서비스 리스트
+    <div className={styles.container}>
+      <div className={styles.mainTitle}>SERVICE</div>
+      <Outlet context={[service]} />
     </div>
   );
 }

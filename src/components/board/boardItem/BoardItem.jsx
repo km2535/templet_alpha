@@ -6,6 +6,7 @@ import crypto from "crypto-js";
 import { checkPassword } from "../../../api/qna/readQnaDetail";
 import styles from "./BoardItem.module.css";
 import Button from "../../../adminpage/ui/Button";
+import { useAuthContext } from "../../../context/AuthContextProvider";
 
 export default function BoardItem({
   qna,
@@ -15,6 +16,7 @@ export default function BoardItem({
   page,
   totalPage,
 }) {
+  const { user } = useAuthContext();
   const navigate = useNavigate();
   const { DATE, READ_CNT, TITLE, WRITER, ID } = Item;
   const [boardNum, setBoardNum] = useState(totalPage);
@@ -32,10 +34,13 @@ export default function BoardItem({
     qna && setPassInput(true);
     qna &&
       checkPassword({ ID: id }).then((pw) =>
-        setPw(
-          crypto.AES.decrypt(pw, "km2535@naver.com").toString(crypto.enc.Utf8)
-        )
+        setPw(crypto.AES.decrypt(pw, ID).toString(crypto.enc.Utf8))
       );
+    qna &&
+      user?.IsAdmin &&
+      navigate(`${process.env.REACT_APP_API_QNA_DETAIL_URL}/${id}`, {
+        state: { Item },
+      });
   };
   const inputPass = (e) => {
     setInputPw(e.target.value);

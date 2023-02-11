@@ -1,0 +1,12 @@
+
+.addIcon{
+  text-align: right;
+}
+.icon{
+  width: max-content;
+  cursor: pointer;
+  font-size: 20px;
+}
+.icon:hover{
+  color: var(--main-font-strong-color);
+}

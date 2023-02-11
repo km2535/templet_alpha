@@ -18,6 +18,7 @@ export default function BoardDetail({ isAdmin }) {
       Item: { ID, READ_CNT, DATE },
     },
   } = useLocation();
+  console.log(ID);
   const [fileUrl, setFileUrl] = useState([]);
   const [imgUrl, setImgUrl] = useState([]);
   const [board, setBoard] = useState([]);
@@ -30,6 +31,7 @@ export default function BoardDetail({ isAdmin }) {
         updateBoardReadCnt({ ID, READ_CNT: Number(READ_CNT) + 1, DATE })
     );
   }, [ID, READ_CNT, DATE, isAdmin]);
+
   useEffect(() => {
     setBoardItem(board?.pop());
   }, [board]);

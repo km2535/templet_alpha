@@ -1,9 +1,12 @@
 import React from "react";
+import styles from "./Qna.module.css";
+import { Outlet } from "react-router-dom";
 
 export default function Qna() {
   return (
-    <div style={{ marginTop: "80px", position: "absolute", zIndex: "-1" }}>
-      Qna
+    <div className={styles.container}>
+      <div className={styles.mainTitle}>Q & A</div>
+      <Outlet />
     </div>
   );
 }

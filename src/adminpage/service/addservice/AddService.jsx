@@ -49,8 +49,8 @@ export default function AddService() {
     const { id, value, files } = e.target;
     if (id === "files") {
       const options = {
-        maxSizeMb: 1,
-        maxWidthOrHeight: 800,
+        maxSizeMb: 2,
+        maxWidthOrHeight: 1000,
       };
       for (let i = 0; i < files.length; i++) {
         //이미지의 경로를 지정함.
