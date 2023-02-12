@@ -82,3 +82,27 @@
 .next, .prev{
   margin: 0 20px;
 }
+
+
+@media screen and (max-width:1200px){
+ .container{
+  width: 1000px;
+ }
+}
+@media screen and (max-width:1024px){
+  .container{
+   width: 95%;
+  }
+}
+@media screen and (max-width:768px){
+ .theadTr, .tbodyTr{
+  font-size: 16px;
+ }
+ .item a{
+  font-size: 20px;
+   margin: 0 2px;
+ }
+ .next, .prev{
+  margin: 0 8px;
+}
+}

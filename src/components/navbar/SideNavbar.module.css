@@ -106,3 +106,17 @@
   font-size: 20px;
   cursor: pointer;
 }
+
+@media screen and (max-width:1024px){
+  
+}
+@media screen and (max-width:768px){
+ .list{
+  padding: 0;
+  height: 85vh;
+  margin-top: 30px;
+ }
+ .snb{
+  margin-top: 20px;
+ }
+}

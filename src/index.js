@@ -8,7 +8,6 @@ import LandingPage from "./pages/landingPage/LandingPage";
 import Home from "./pages/home/Home";
 import About from "./pages/about/About";
 import Location from "./pages/location/Location";
-import RoomList from "./pages/roomlist/RoomList";
 import Service from "./pages/service/Service";
 import Notice from "./pages/notice/Notice";
 import Qna from "./pages/qna/Qna";
@@ -36,6 +35,7 @@ import QnaList from "./pages/qna/qnaList/QnaList";
 import NoticeList from "./pages/notice/noticeList/NoticeList";
 import ServiceFirst from "./pages/service/ServiceFirst/ServiceFirst";
 import ServiceDetail from "./pages/service/ServiceDetail/ServiceDetail";
+import Room from "./pages/room/Room";
 
 const router = createBrowserRouter([
   {
@@ -63,7 +63,7 @@ const router = createBrowserRouter([
           },
           {
             path: process.env.REACT_APP_API_SUB_OPTION_TWO_URL,
-            element: <RoomList />,
+            element: <Room />,
           },
           {
             path: process.env.REACT_APP_API_SUB_OPTION_THREE_URL,

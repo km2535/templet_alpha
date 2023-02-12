@@ -134,7 +134,7 @@ export default function Navbar({ option }) {
                 <AiFillEdit />
               </div>
             )}
-            {user?.NAME || user?.USER_EMAIL}님 환영합니다.
+            {user?.NAME || user?.USER_EMAIL}님
             <div className={styles.logout} onClick={() => navigate("/logout")}>
               <IoExitOutline />
             </div>

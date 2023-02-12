@@ -50,3 +50,8 @@ code {
   --sideNavbar-font-vivamagenda:#FFF4F5;
   --font-white-color : #FFFFFF;
 }
+@media screen and (max-width:768px){
+ #root{
+  touch-action: pan-y;
+ }
+}

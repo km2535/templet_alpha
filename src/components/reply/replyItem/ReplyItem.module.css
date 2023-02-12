@@ -60,3 +60,22 @@
 .img{
   width: 100%;
 }
+
+@media screen and (max-width:1200px){
+  .detailInput{
+    height: 80px;
+  }
+}
+@media screen and (max-width:1024px){
+  .container{
+   width: 70%;
+  }
+}
+@media screen and (max-width:768px){
+  .container{
+   width: 90%;
+  }
+  .DESCRIPTION{
+    font-size: 0.85rem;
+  }
+}

@@ -1,4 +1,4 @@
-export const uploadRely = (reply) => {
+export const uploadRely = async (reply) => {
   const { ID, WRITER, DESCRIPTION, IMAGE_URLS, FILE_URLS } = reply;
   const formData = new FormData();
   formData.append("ID", ID);
@@ -7,7 +7,7 @@ export const uploadRely = (reply) => {
   formData.append("IMAGE_URLS", IMAGE_URLS);
   formData.append("FILE_URLS", FILE_URLS);
 
-  fetch(`${process.env.REACT_APP_API_REPLY_URL}/addReply.php`, {
+  await fetch(`${process.env.REACT_APP_API_REPLY_URL}/addReply.php`, {
     method: "POST",
     body: formData,
   })

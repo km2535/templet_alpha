@@ -1,6 +1,9 @@
-
+.container{
+  height: auto;
+}
 .addIcon{
   text-align: right;
+  margin-bottom: 20px;
 }
 .icon{
   width: max-content;
@@ -9,4 +12,15 @@
 }
 .icon:hover{
   color: var(--main-font-strong-color);
+}
+@media screen and (max-width:1200px){
+
+}
+@media screen and (max-width:1024px){
+
+}
+@media screen and (max-width:768px){
+ .addIcon{
+  margin-right: 20px;
+ }
 }

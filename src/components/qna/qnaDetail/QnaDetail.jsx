@@ -8,7 +8,6 @@ import { removeQnaImg } from "../../../api/qna/removeQnaImg";
 import { removeQnaItem } from "../../../api/qna/removeQnaItem";
 import { updateQnaReadCnt } from "../../../api/qna/updateQnaReadCnt";
 import Reply from "../../reply/Reply";
-import ReplyList from "../../reply/replyList/ReplyList";
 import styles from "./QnaDetail.module.css";
 
 export default function QnaDetail({ isAdmin }) {
@@ -145,8 +144,7 @@ export default function QnaDetail({ isAdmin }) {
           </div>
         </div>
       </div>
-      <ReplyList ID={ID} />
-      <Reply user={"km1416@naver.com"} ID={ID} />
+      <Reply ID={ID} />
     </>
   );
 }

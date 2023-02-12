@@ -8,7 +8,7 @@ export default function QnaList() {
   const navigate = useNavigate();
 
   return (
-    <div>
+    <div className={styles.container}>
       <div>
         <BoardList qna={true} />
       </div>

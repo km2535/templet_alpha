@@ -1,24 +1,38 @@
-export const naverLogin = async (code, state) => {
+export const naverLogin = async (code, state, setNaverAccess) => {
+  const formData = new FormData();
+  formData.append("code", code);
+  formData.append("state", state);
+  formData.append("client_id", process.env.REACT_APP_NAVER_CLIENT_ID_API);
+  formData.append(
+    "client_secret",
+    process.env.REACT_APP_NAVER_CLIENT_SECRET_API
+  );
+
   await fetch(
-    `https://nid.naver.com/oauth2.0/token?grant_type=authorization_code&client_id=${process.env.REACT_APP_NAVER_CLIENT_ID_API}&client_secret=${process.env.REACT_APP_NAVER_CLIENT_SECRET_API}&redirect_uri=${process.env.REACT_APP_API_REDIRECT_URL}&code=${code}&state=${state}`,
+    `${process.env.REACT_APP_API_URL}/service/src/login/naver/naverGetToken.php`,
     {
-      method: "GET",
+      method: "POST",
+      body: formData,
     }
   )
     .then((res) => res.json())
-    .then((data) =>
-      window.sessionStorage.setItem("naverAccess", data?.access_token)
-    );
+    .then((data) => {
+      window.sessionStorage.setItem("naverAccess", data?.access_token);
+      setNaverAccess(data?.access_token);
+    });
 };
 
 export const naverLog = (naverAccess, setUser) => {
   const formData = new FormData();
   formData.append("token", naverAccess);
 
-  fetch("https://kangmin.shop/service/src/login/naver/naverLogin.php", {
-    method: "POST",
-    body: formData,
-  })
+  fetch(
+    `${process.env.REACT_APP_API_URL}/service/src/login/naver/naverLogin.php`,
+    {
+      method: "POST",
+      body: formData,
+    }
+  )
     .then((response) => response.json())
     .then((data) =>
       setUser({

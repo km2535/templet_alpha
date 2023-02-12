@@ -32,12 +32,7 @@ export default function AccessLogin() {
         setKakaoAccess(window.sessionStorage.getItem("kakaAccess"));
       });
 
-    code &&
-      state &&
-      naverLogin(code, state).then(() => {
-        setNaverAccess(window.sessionStorage.getItem("naverAccess"));
-      });
-    navigate("/");
+    code && state && naverLogin(code, state, setNaverAccess);
   }, [navigate, setKakaoAccess, setNaverAccess]);
   return <></>;
 }

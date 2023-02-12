@@ -84,3 +84,53 @@
   justify-content: flex-end;
   padding: 20px;
 }
+
+@media screen and (max-width:1200px){
+  .container{
+    width: 1000px;
+  }
+}
+@media screen and (max-width:1024px){
+  .container{
+    width: 95%;
+  }
+}
+@media screen and (max-width:768px){
+  .container{
+    width: 100%;
+  }
+  .table{
+    width: 100%;
+  }
+  .theadTr, .tbodyTr{
+    width: 100%;
+    font-size: 14px;
+  }
+  .thTitle, .tdTitle{
+    width: 30%;
+  }
+  .thWriter,.tdWriter{
+    width: 15%;
+  }
+  .thReadCnt ,.tdReadCnt{
+    width: 10%;
+  }
+  .img{
+    max-width: 300px;
+    max-height: 300px;
+  }
+  .download{
+    font-size: 14px;
+    padding: 5px;
+  }
+  .tdDate{
+    font-size: 12px;
+  }
+  .description{
+    font-size: 14px;
+  }
+  .downloadFile{
+    width: 100vw;
+    flex-wrap: wrap;
+  }
+}

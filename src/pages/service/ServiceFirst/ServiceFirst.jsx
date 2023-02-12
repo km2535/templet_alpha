@@ -26,7 +26,6 @@ export default function ServiceFirst() {
     setImgUrl(first?.IMAGE_URLS?.split(","));
     setProvider(first?.PROVIDE_SERVICE?.split(","));
   }, [first?.IMAGE_URLS, first?.PROVIDE_SERVICE]);
-  console.log(first);
   return (
     <div>
       <div className={styles.Title}>

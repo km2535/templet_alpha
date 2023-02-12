@@ -8,6 +8,7 @@
   font-size: 20px;
   font-family: var(--main-kr-font);
   height: 50px;
+  border-bottom: 1px solid #e9e8e8;
 }
 .tdTitle{
   width: 40%;
@@ -15,6 +16,9 @@
 }
 .tdTitle:hover{
   color: var(--main-font-strong-color);
+}
+.tdNum{
+  width: 10%;
 }
 .tdWriter{
   width: 15%;
@@ -49,4 +53,21 @@
 .pwInput{
   width: 60%;
   height: 20px;
+}
+
+
+@media screen and (max-width:1200px){
+
+}
+@media screen and (max-width:1024px){
+
+}
+@media screen and (max-width:768px){
+  .tbodyTr{
+    font-size: 14px;
+    height: 40px;
+  }
+  .tdDate{
+    font-size: 12px;
+  }
 }

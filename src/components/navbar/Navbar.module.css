@@ -1,4 +1,3 @@
-
 .container, .containerWhite{
   display: flex;
   padding: 10px 0;
@@ -107,18 +106,27 @@
   }
 }
 @media screen and (max-width:768px){
- .logoContainer{
-    width: 150px;
+  .container, .containerWhite{
+    width: 100%;
+    justify-content: center;
+  }
+  .logoContainer{
+    width: 200px;
     height: 30px;
+    margin: 0 auto;
   }
-  .profile,.login{
-    font-size: 10px;
+  .loggin,.logginDark{
+    position: absolute;
+    top: 15px;
+    right: 10px;
   }
-  .edit{
-    margin: 0;
-    font-size: 14px;
+  .logout{
+    margin-left: 5px;
   }
   .menuDark,.menu{
-    font-size: 24px;
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    font-size: 30px;
   }
 }
