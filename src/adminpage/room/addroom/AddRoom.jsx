@@ -179,10 +179,11 @@ export default function AddRoom() {
           </div>
           <textarea
             type={"text"}
-            placeholder="제품의 상세내용을 작성해주세요"
+            placeholder="제품의 상세내용을 작성해주세요 150자 이하 작성"
             id="DETAIL_DESCRIPTION"
             className={styles.detailInput}
-            cols="50"
+            rows="5"
+            maxLength={180}
             required
             onChange={changeHandler}
           />

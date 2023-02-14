@@ -204,6 +204,8 @@ export default function AdminRoomEdit() {
             type={"text"}
             defaultValue={DETAIL_DESCRIPTION}
             id="DETAIL_DESCRIPTION"
+            rows="5"
+            maxLength={180}
             className={styles.detailInput}
             onChange={changeHandler}
           />

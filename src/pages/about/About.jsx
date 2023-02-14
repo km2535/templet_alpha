@@ -1,9 +1,14 @@
 import React from "react";
+import Banner from "./banner/Banner";
+import Intro from "./intro/Intro";
+import Section from "./section/Section";
 
 export default function About() {
   return (
-    <div style={{ marginTop: "80px", position: "absolute", zIndex: "-1" }}>
-      about 페이지
+    <div>
+      <Banner />
+      <Section />
+      <Intro />
     </div>
   );
 }

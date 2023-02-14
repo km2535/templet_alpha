@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Domine:wght@400;500;600;700&display=swap');
 
 body {
   margin: 0;
@@ -36,6 +37,7 @@ code {
   --navi-white-color : #2F485855;
   --main-kr-font : 'Noto Sans KR', sans-serif;
   --main-eg-font : 'Rubik', sans-serif;
+  --sub-eg-font : 'Domine', serif;
   --sideNavbar-bg-graysand:#E5CCAF;
   --sideNavbar-bg-graysand-hover:#f1dbc2;
   --sideNavbar-font-graysand:#2F4858;

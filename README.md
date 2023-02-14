@@ -12,6 +12,7 @@
 - "react-paginate" (페이지네이션 효과)
 -  "crypto-js" (패스워드 암호화 및 복호화)
 -  "swiper" (이미지 슬라이더)
+-  "typewriter-effect" (타이핑 효과)
 
 ## 버전
 ### 1.0.0 
@@ -25,4 +26,10 @@
 - 네이버 로그인 구현 완료
 
 ### 1.0.2
-- 메인 페이지 디자인
+- QNA, NOTICE, SERVICE 페이지 디자인 완성
+- ROOM 디자인 완성
+
+### 1.0.3
+- LOCATION 완성(구글지도)
+- ABOUT 완성
+- LANDING PAGE 작성 중

@@ -36,6 +36,7 @@ import NoticeList from "./pages/notice/noticeList/NoticeList";
 import ServiceFirst from "./pages/service/ServiceFirst/ServiceFirst";
 import ServiceDetail from "./pages/service/ServiceDetail/ServiceDetail";
 import Room from "./pages/room/Room";
+import RoomDetail from "./pages/room/roomDetail/RoomDetail";
 
 const router = createBrowserRouter([
   {
@@ -64,6 +65,10 @@ const router = createBrowserRouter([
           {
             path: process.env.REACT_APP_API_SUB_OPTION_TWO_URL,
             element: <Room />,
+          },
+          {
+            path: `${process.env.REACT_APP_API_SUB_OPTION_TWO_URL}/:id`,
+            element: <RoomDetail />,
           },
           {
             path: process.env.REACT_APP_API_SUB_OPTION_THREE_URL,

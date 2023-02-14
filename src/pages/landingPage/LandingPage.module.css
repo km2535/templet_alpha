@@ -1,8 +1,3 @@
 .section{
-  height: 2000px;
-}
-.banner{
-  width: 100vw;
-  height: 50vh;
-  background-color: var(--sideNavbar-bg-graysand);
+  margin-bottom: 50px;
 }

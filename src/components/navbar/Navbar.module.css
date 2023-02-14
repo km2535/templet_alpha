@@ -2,11 +2,12 @@
   display: flex;
   padding: 10px 0;
   width: 100%;
-  height: 100px;
+  height: 80px;
   justify-content: space-between;
   position: fixed;
   align-items: center;
   transition: background-color .3s;
+  z-index: 9999;
 }
 .containerWhite{
   background-color: var(--navi-white-color);
@@ -33,7 +34,7 @@
   cursor: pointer;
 }
 .logoContainer{
-  width: 300px;
+  width: 250px;
   height: 50px;
 }
 .img{
@@ -105,13 +106,19 @@
     font-size: 30px;
   }
 }
+@media screen and (max-width:960px){
+  .container, .containerWhite{
+    height: 60px;
+  }
+}
 @media screen and (max-width:768px){
   .container, .containerWhite{
     width: 100%;
+    height: 50px;
     justify-content: center;
   }
   .logoContainer{
-    width: 200px;
+    width: 150px;
     height: 30px;
     margin: 0 auto;
   }

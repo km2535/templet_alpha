@@ -17,20 +17,22 @@ export default function Room() {
   return (
     <div className={styles.container}>
       <RoomList currentPage={currentPage} />
-      <ReactPaginate
-        breakLabel={""}
-        previousLabel={"<"}
-        nextLabel={">"}
-        onPageChange={handlePageClick}
-        pageCount={Math.ceil(totalCnt / 4)}
-        pageRangeDisplayed={10}
-        marginPagesDisplayed={10}
-        containerClassName={styles.pagination}
-        activeClassName={styles.current}
-        pageClassName={styles.item}
-        previousClassName={styles.prev}
-        nextClassName={styles.next}
-      />
+      <div className={styles.paginationContainer}>
+        <ReactPaginate
+          breakLabel={""}
+          previousLabel={"<"}
+          nextLabel={">"}
+          onPageChange={handlePageClick}
+          pageCount={Math.ceil(totalCnt / 4)}
+          pageRangeDisplayed={10}
+          marginPagesDisplayed={10}
+          containerClassName={styles.pagination}
+          activeClassName={styles.current}
+          pageClassName={styles.item}
+          previousClassName={styles.prev}
+          nextClassName={styles.next}
+        />
+      </div>
     </div>
   );
 }
