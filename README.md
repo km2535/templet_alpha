@@ -32,4 +32,7 @@
 ### 1.0.3
 - LOCATION 완성(구글지도)
 - ABOUT 완성
-- LANDING PAGE 작성 중
+- LANDING PAGE 완성
+
+### 1.0.4
+- 무한 텍스트 스크롤 애니메이션 효과적용

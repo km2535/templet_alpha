@@ -4,6 +4,7 @@ import LandBanner from "./landBanner/LandBanner";
 import styles from "./LandingPage.module.css";
 import LandIntro from "./landIntro/LandIntro";
 import LandProvide from "./landProvide/LandProvide";
+import LandService from "./landService/LandService";
 export default function LandingPage() {
   return (
     <div id="landingpage">
@@ -16,6 +17,9 @@ export default function LandingPage() {
       </section>
       <section>
         <LandProvide />
+      </section>
+      <section className={styles.section}>
+        <LandService />
       </section>
     </div>
   );

@@ -1,4 +1,5 @@
 import React from "react";
+import LandText from "../landText/LandText";
 import styles from "./LandProvide.module.css";
 
 export default function LandProvide() {
@@ -16,6 +17,7 @@ export default function LandProvide() {
           </div>
         </div>
       </div>
+      <LandText text={"FACILITY"} position={-300} />
       <div className={styles.second}>
         <div className={styles.description}>
           <div className={styles.title}>풍부한 주변 볼거리리</div>

@@ -11,6 +11,7 @@
 .img, .description{
   width: 50%;
   text-align: center;
+  z-index: 99;
 }
 .img img{
   width: 400px;
@@ -72,6 +73,6 @@
     font-size: 18px;
   }
   .subTitle{
-    font-size: 12px;
+    font-size: 10px;
   }
 }
