@@ -1,4 +1,5 @@
 import React from "react";
+import Footer from "../../components/footer/Footer";
 import Navbar from "../../components/navbar/Navbar";
 import LandBanner from "./landBanner/LandBanner";
 import styles from "./LandingPage.module.css";
@@ -21,6 +22,9 @@ export default function LandingPage() {
       <section className={styles.section}>
         <LandService />
       </section>
+      <footer>
+        <Footer />
+      </footer>
     </div>
   );
 }

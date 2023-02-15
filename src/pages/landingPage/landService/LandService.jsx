@@ -3,9 +3,11 @@ import { readService } from "../../../api/service/readService";
 import styles from "./LandService.module.css";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { v4 as uuidv4 } from "uuid";
-import { Autoplay } from "swiper";
+import { Autoplay, Navigation } from "swiper";
 import { useNavigate } from "react-router-dom";
 import "./LandService.css";
+import "swiper/css";
+import "swiper/css/navigation";
 import LandText from "../landText/LandText";
 export default function LandService() {
   const navegate = useNavigate();
@@ -17,12 +19,17 @@ export default function LandService() {
     <div className={styles.container}>
       <div className={styles.sliderContainer}>
         <Swiper
+          style={{
+            "--swiper-navigation-color": "#fff",
+          }}
           spaceBetween={50}
+          navigation={true}
+          grabCursor={true}
           slidesPerView={services.length >= 3 ? 3 : 1}
-          modules={[Autoplay]}
-          autoplay={{ delay: 3500, disableOnInteraction: false }}
+          modules={[Autoplay, Navigation]}
+          autoplay={{ delay: 4000, disableOnInteraction: false }}
           speed={800}
-          loop={true}
+          rewind={true}
         >
           {services?.map((service) => (
             <SwiperSlide key={uuidv4()}>

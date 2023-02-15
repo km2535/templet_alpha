@@ -36,6 +36,9 @@ export default function RoomDetail() {
       <div className={styles.mainTitle}>{TITLE}</div>
       <div className={styles.sliderContent}>
         <SwiperDetail
+          style={{
+            "--swiper-navigation-color": "#fff",
+          }}
           navigation={true}
           speed={800}
           scrollbar={{

@@ -20,6 +20,9 @@ export default function LandIntro() {
     <div className={styles.container}>
       <div className={styles.sliderContent}>
         <MainSwiper
+          style={{
+            "--swiper-navigation-color": "#2F4858",
+          }}
           spaceBetween={30}
           effect={"fade"}
           navigation={true}
