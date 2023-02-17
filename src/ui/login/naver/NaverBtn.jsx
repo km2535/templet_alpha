@@ -12,6 +12,7 @@ export default function NaverBtn() {
     <div className={styles.naverbtn} onClick={naverLoginHandler}>
       <div className={styles.naverLogo}>
         <img src="/images/naver.png" alt="google" />
+        <div className={styles.naverTxt}>네이버로 로그인</div>
       </div>
     </div>
   );

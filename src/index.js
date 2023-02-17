@@ -111,8 +111,16 @@ const router = createBrowserRouter([
                 element: <AddQna />,
               },
               {
-                path: `${process.env.REACT_APP_API_QNA_DETAIL_URL}/:id`,
+                path: `${process.env.REACT_APP_API_QNA_DETAIL_URL}`,
                 element: <QnaDetail />,
+              },
+              {
+                path:
+                  process.env.REACT_APP_API_QNA_DETAIL_URL +
+                  "/" +
+                  process.env.REACT_APP_API_QNA_EDIT_URL +
+                  "/:id",
+                element: <AdminQnaEdit />,
               },
             ],
           },
@@ -191,10 +199,6 @@ const router = createBrowserRouter([
             path: process.env.REACT_APP_API_ADMIN_BOARDEDIT_URL + "/:id",
             element: <AdminBoardEdit />,
           },
-          {
-            path: process.env.REACT_APP_API_ADMIN_QNALIST_URL,
-            element: <AdminQnaList />,
-          },
 
           {
             path: process.env.REACT_APP_API_ADMIN_ADDQNA_URL,
@@ -204,13 +208,22 @@ const router = createBrowserRouter([
             path:
               process.env.REACT_APP_API_ADMIN_QNALIST_URL +
               "/" +
-              process.env.REACT_APP_API_QNA_DETAIL_URL +
-              "/:id",
+              process.env.REACT_APP_API_QNA_DETAIL_URL,
             //admin 여부 확인하여 경로 보호하기
             element: <QnaDetail isAdmin={true} />,
           },
           {
-            path: process.env.REACT_APP_API_ADMIN_QNAEDIT_URL + "/:id",
+            path: process.env.REACT_APP_API_ADMIN_QNALIST_URL,
+            element: <AdminQnaList />,
+          },
+          {
+            path:
+              process.env.REACT_APP_API_ADMIN_QNALIST_URL +
+              "/" +
+              process.env.REACT_APP_API_QNA_DETAIL_URL +
+              "/" +
+              process.env.REACT_APP_API_QNA_EDIT_URL +
+              "/:id",
             element: <AdminQnaEdit />,
           },
         ],

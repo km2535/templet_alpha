@@ -22,11 +22,9 @@ export default function BoardItem({
   const [boardNum, setBoardNum] = useState(totalPage);
   const [pw, setPw] = useState("");
   const [inputPw, setInputPw] = useState("");
-  const [targetId, setTargetId] = useState("");
   const [passInput, setPassInput] = useState(false);
   const clickHandler = (e) => {
     const { id } = e.target;
-    setTargetId(id);
     notice &&
       navigate(`${process.env.REACT_APP_API_BOARD_DETAIL_URL}/${id}`, {
         state: { Item },
@@ -38,7 +36,7 @@ export default function BoardItem({
       );
     qna &&
       user?.IsAdmin &&
-      navigate(`${process.env.REACT_APP_API_QNA_DETAIL_URL}/${id}`, {
+      navigate(`${process.env.REACT_APP_API_QNA_DETAIL_URL}`, {
         state: { Item },
       });
   };
@@ -47,7 +45,7 @@ export default function BoardItem({
   };
   const checkPass = () => {
     if (inputPw && pw === inputPw) {
-      navigate(`${process.env.REACT_APP_API_QNA_DETAIL_URL}/${targetId}`, {
+      navigate(`${process.env.REACT_APP_API_QNA_DETAIL_URL}`, {
         state: { Item },
       });
     } else {

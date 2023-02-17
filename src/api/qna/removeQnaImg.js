@@ -7,7 +7,7 @@ export const removeQnaImg = async (qna) => {
     body: formData,
   })
     .then((res) => {
-      return console.log(res);
+      return res;
     })
     .catch((err) => {
       return err;

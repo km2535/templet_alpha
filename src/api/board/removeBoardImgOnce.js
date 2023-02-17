@@ -11,7 +11,7 @@ export const removeBoardImgOnce = async (board) => {
     }
   )
     .then((res) => {
-      return console.log(res);
+      return res;
     })
     .catch((err) => {
       return err;

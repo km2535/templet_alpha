@@ -116,7 +116,6 @@
    display: flex;
   flex-wrap: nowrap;
   justify-content: flex-start;
-  width: 60%;
 }
 .imgList{
   display: flex;

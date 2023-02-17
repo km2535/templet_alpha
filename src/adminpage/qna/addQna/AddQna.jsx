@@ -22,7 +22,7 @@ export default function AddQna() {
   const [file, setFile] = useState([]);
   const [previewFile, setPreviewFile] = useState([]);
   const [previewImg, setPreviewImg] = useState([]);
-  console.log(board);
+
   useEffect(() => {
     const ID = uuidv4();
     //작성자는 로그인 한 사용자가 되도록 한다.

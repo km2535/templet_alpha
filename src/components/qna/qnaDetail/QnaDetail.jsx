@@ -43,7 +43,7 @@ export default function QnaDetail({ isAdmin }) {
     );
   }, [boardItem?.DESCRIPTION]);
   const goEdit = () => {
-    navigate(`${process.env.REACT_APP_API_ADMIN_QNAEDIT_URL}/${ID}`, {
+    navigate(`${process.env.REACT_APP_API_QNA_EDIT_URL}/${ID}`, {
       state: { boardItem },
     });
   };
