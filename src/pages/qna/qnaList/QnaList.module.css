@@ -1,14 +1,17 @@
 .container{
+  display: flex;
   height: auto;
+  flex-direction: column;
 }
 .addIcon{
-  text-align: right;
+  display: flex;
+  width: 100%;
+  justify-content: flex-end;
   margin-bottom: 20px;
 }
 .icon{
-  width: max-content;
   cursor: pointer;
-  font-size: 20px;
+  font-size: 30px;
 }
 .icon:hover{
   color: var(--main-font-strong-color);
@@ -17,10 +20,16 @@
 
 }
 @media screen and (max-width:1024px){
-
+  .addIcon{
+   width: 95%;
+  }
+  
 }
 @media screen and (max-width:768px){
- .addIcon{
-  margin-right: 20px;
- }
+  .addIcon{
+   width: 90%;
+  }
+  .icon{
+    font-size: 25px;
+  }
 }

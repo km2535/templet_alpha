@@ -128,17 +128,16 @@ export default function QnaDetail({ isAdmin }) {
           </tbody>
         </table>
         <div className={styles.btnContainer}>
-          {isAdmin && (
-            <div className={styles.btn}>
-              <Button title="수정하기" type={"button"} callback={goEdit} />
-              <Button
-                title="삭제하기"
-                sub={true}
-                type={"button"}
-                callback={deleteHandler}
-              />
-            </div>
-          )}
+          <div className={styles.btn}>
+            <Button title="수정하기" type={"button"} callback={goEdit} />
+            <Button
+              title="삭제하기"
+              sub={true}
+              type={"button"}
+              callback={deleteHandler}
+            />
+          </div>
+
           <div>
             <Button title="목록" sub={true} type={"button"} callback={goBack} />
           </div>

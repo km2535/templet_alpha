@@ -110,6 +110,7 @@
 @media screen and (max-width:768px){
   .container{
     height: 250px;
+    top: 0px;
   }
   .topInfo{
     font-size: 12px;

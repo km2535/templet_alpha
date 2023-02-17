@@ -146,3 +146,62 @@
   font-family: var(--main-kr-font);
   height: 250px;
 }
+
+
+@media screen and (max-width:1200px){
+  .container{
+    width: 1000px;
+  }
+  .titleInput{
+    width: 100%;
+    font-size: 14px;
+  }
+}
+@media screen and (max-width:1024px){
+  .container{
+    width: 800px;
+  }
+}
+@media screen and (max-width:768px){
+  .container{
+    width: 100%;
+  }
+  .tdTitle,.thTitle{
+    width: 40%;
+  }
+    .titleInput{
+    font-size: 12px;
+    width: 98%;
+  }
+  .tdWriter, .thWriter{
+    width: 30%;
+  }
+  .pwTitle{
+    font-size: 12px;
+    width: 98%;
+  }
+  .tdPassword{
+    width: 30%;
+  }
+  .pwTitle{
+    display: none;
+  }
+  .passwordInput{
+    font-size: 12px;
+    height: 35px;
+    width: 98%;
+  }
+  .downloadTitle{
+    font-size: 14px;
+    width: 25%;
+  }
+  .fileContent{
+    margin-right: 5px;
+  }
+  .files{
+    font-size: 12px;
+  }
+  .detailInput{
+    font-size: 16px;
+  }
+}

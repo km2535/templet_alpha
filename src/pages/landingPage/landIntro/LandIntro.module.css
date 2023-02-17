@@ -83,4 +83,7 @@
  .summary{
   margin-top: 0;
  }
+ .summary{
+  width: 80%;
+}
 }

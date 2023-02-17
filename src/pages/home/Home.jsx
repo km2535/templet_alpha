@@ -10,7 +10,9 @@ export default function Home() {
       <div className={styles.content}>
         <Outlet />
       </div>
-      <Footer />
+      <footer className={styles.container}>
+        <Footer />
+      </footer>
     </>
   );
 }
