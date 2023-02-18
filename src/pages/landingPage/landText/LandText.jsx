@@ -25,6 +25,10 @@ export default function LandText({ text, position }) {
       count = moveTxt(count);
       window.requestAnimationFrame(animate);
     };
+    const scrollHandler = () => {
+      count += 5;
+    };
+    window.addEventListener("scroll", scrollHandler);
     animate();
   }, [count]);
   return (

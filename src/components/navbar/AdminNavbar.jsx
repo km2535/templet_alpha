@@ -65,7 +65,7 @@ export default function AdminNavbar() {
           <div className={styles.home} onClick={() => navigate("/")}>
             <AiOutlineHome />
           </div>
-          {user.IsAdmin && (user?.NAME || user?.USER_EMAIL)}님 환영합니다.
+          {user.IsAdmin && (user?.NAME || user?.USER_EMAIL)}님
         </div>
         <div className={styles.logout} onClick={() => navigate("/logout")}>
           <IoExitOutline />

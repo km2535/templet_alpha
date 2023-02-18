@@ -12,6 +12,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   padding: 0;
   overflow-x: hidden;
+  touch-action: pan-y;
 }
 body::-webkit-scrollbar{
   width: 10px;
@@ -25,9 +26,10 @@ body::-webkit-scrollbar-thumb{
 }
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+  monospace;
 }
 #root{
+  touch-action: pan-y;
   width: 100vw;
 }
 #root::-webkit-scrollbar{

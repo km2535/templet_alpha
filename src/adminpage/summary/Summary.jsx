@@ -1,4 +1,5 @@
 import React from "react";
+import Footer from "../../components/footer/Footer";
 import styles from "./Summary.module.css";
 import SummaryCard from "./summaryCard/SummaryCard";
 
@@ -23,6 +24,9 @@ export default function Summary() {
           <SummaryCard serviceName={"qna"} />
         </div>
       </div>
+      <footer>
+        <Footer />
+      </footer>
     </>
   );
 }

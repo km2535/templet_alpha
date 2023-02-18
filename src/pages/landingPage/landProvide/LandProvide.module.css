@@ -3,6 +3,7 @@
   flex-direction: column;
   width: 80%;
   margin: 0 auto;
+  touch-action: pan-y;
 }
 .first, .second, .thirth{
   display: flex;

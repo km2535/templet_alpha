@@ -2,9 +2,11 @@
   margin-top: 100px;
   width: 100%;
   height: 700px;
+  touch-action: pan-y;
   background-color: #E5CCAF;
 }
 .sliderContainer{
+  touch-action: pan-y;
   position: relative;
   width: 70%;
   margin: 0 auto;
