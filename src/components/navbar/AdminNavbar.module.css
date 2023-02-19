@@ -55,7 +55,7 @@
     display: none;
   }
   .logo{
-    width: 200px;
+    width: 120px;
     height: 40px;
   }
   .profile,.login{
@@ -64,10 +64,18 @@
   .menuDark,.menu{
     font-size: 30px;
   }
+   .gnbTitle{
+    font-size: 20px;
+  }
 }
 @media screen and (max-width:960px){
   .container, .containerWhite{
     height: 60px;
+  }
+   .loggin,.logginDark{
+    position: absolute;
+    top: 10px;
+    right: 10px;
   }
 }
 @media screen and (max-width:768px){
@@ -86,11 +94,7 @@
     height: 30px;
     margin: 0 auto;
   }
-  .loggin,.logginDark{
-    position: absolute;
-    top: 10px;
-    right: 10px;
-  }
+ 
   .logout{
     margin-left: 5px;
   }

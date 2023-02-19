@@ -11,7 +11,7 @@ export default function ReplyList({ ID, setReply, reply }) {
   return (
     <div className={styles.container}>
       {reply.map((item) => (
-        <ReplyItem item={item} key={uuidv4()} />
+        <ReplyItem item={item} key={uuidv4()} setReply={setReply} />
       ))}
     </div>
   );

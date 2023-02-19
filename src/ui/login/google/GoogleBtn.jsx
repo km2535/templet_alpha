@@ -14,7 +14,10 @@ export default function GoogleBtn() {
     <div className={styles.googlebtn} onClick={googleLoginHandler}>
       <div className={styles.googleLogo}>
         <div className={styles.googleImg}>
-          <img src="/images/google.png" alt="google" />
+          <img
+            src={`${process.env.REACT_APP_API_URL}/images/google.png`}
+            alt="google"
+          />
         </div>
         <div className={styles.googleTxt}>구글로 로그인</div>
       </div>

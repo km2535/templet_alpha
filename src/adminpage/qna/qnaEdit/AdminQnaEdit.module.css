@@ -124,6 +124,7 @@
 }
 .fileList{
   display: flex;
+  flex-wrap: wrap;
 }
 .img{
   max-width: 600px;
@@ -176,24 +177,9 @@
   .tdWriter, .thWriter{
     width: 30%;
   }
-  .pwTitle{
-    font-size: 12px;
-    width: 98%;
-  }
-  .tdPassword{
-    width: 30%;
-  }
-  .pwTitle{
-    display: none;
-  }
-  .passwordInput{
-    font-size: 12px;
-    height: 35px;
-    width: 98%;
-  }
   .downloadTitle{
     font-size: 14px;
-    width: 25%;
+    width: 30%;
   }
   .fileContent{
     margin-right: 5px;
@@ -203,5 +189,19 @@
   }
   .detailInput{
     font-size: 16px;
+  }
+  .img{
+    max-width: 300px;
+    max-height: 300px;
+  }
+
+  .theadTr{
+    font-size: 14px;
+  }
+  .tdWriter,.tdReadCnt{
+    font-size: 14px;
+  }
+  .tdDate{
+    font-size: 10px;
   }
 }

@@ -14,6 +14,7 @@ import { readReplyList } from "../../../api/reply/readReplyList";
 export default function AddReply({ ID, setNewReply }) {
   const { user } = useAuthContext();
   const [reply, setReply] = useState([]);
+  const [REPLY_ID, setREPLY_ID] = useState(uuidv4());
   const [imgUrl, setImgUrl] = useState([]);
   const [imgFiles, setImgFiles] = useState([]);
   const [fileUrl, setFileUrl] = useState([]);
@@ -25,9 +26,10 @@ export default function AddReply({ ID, setNewReply }) {
     setReply((prev) => ({
       ...prev,
       ID: ID,
+      REPLY_ID: REPLY_ID,
       WRITER: user?.NAME || user?.USER_EMAIL || "",
     }));
-  }, [ID, user]);
+  }, [ID, REPLY_ID, user]);
   useEffect(() => {
     setReply((prev) => ({ ...prev, FILE_URLS: fileUrl }));
   }, [fileUrl]);
@@ -106,6 +108,7 @@ export default function AddReply({ ID, setNewReply }) {
   const boardSubmit = (e) => {
     e.preventDefault();
     const text = window.document.getElementById("DESCRIPTION");
+    const writer = window.document.getElementById("WRITER");
     uploadReplyFile(file, imgFiles, reply);
     uploadRely(reply).then(() => {
       setTimeout(() => {
@@ -114,7 +117,8 @@ export default function AddReply({ ID, setNewReply }) {
     });
     alert("댓글이 추가되었습니다.");
     text.value = "";
-    setReply("");
+    user?.NAME || user?.USER_EMAIL || (writer.value = "");
+    setREPLY_ID(uuidv4());
     setPreviewFile([]);
     setPreviewImg([]);
     setImgFiles([]);

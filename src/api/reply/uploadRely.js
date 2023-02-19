@@ -1,7 +1,8 @@
 export const uploadRely = async (reply) => {
-  const { ID, WRITER, DESCRIPTION, IMAGE_URLS, FILE_URLS } = reply;
+  const { ID, REPLY_ID, WRITER, DESCRIPTION, IMAGE_URLS, FILE_URLS } = reply;
   const formData = new FormData();
   formData.append("ID", ID);
+  formData.append("REPLY_ID", REPLY_ID);
   formData.append("WRITER", WRITER);
   formData.append("DESCRIPTION", DESCRIPTION);
   formData.append("IMAGE_URLS", IMAGE_URLS);

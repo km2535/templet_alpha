@@ -8,7 +8,7 @@ export default function LandBanner() {
       <div
         className={styles.imgContainer}
         style={{
-          backgroundImage: `url(${process.env.PUBLIC_URL}/images/bg1.jpg)`,
+          backgroundImage: `url(${process.env.REACT_APP_API_URL}/images/bg1.jpg)`,
         }}
       ></div>
       <div className={styles.ment}>

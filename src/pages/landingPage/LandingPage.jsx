@@ -8,7 +8,7 @@ import LandProvide from "./landProvide/LandProvide";
 import LandService from "./landService/LandService";
 export default function LandingPage() {
   return (
-    <div id="landingpage">
+    <div id="landingpage" className={styles.container}>
       <Navbar option={{ main: true, sub: false }} />
       <section className={styles.section}>
         <LandBanner />

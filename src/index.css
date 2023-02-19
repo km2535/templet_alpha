@@ -24,6 +24,12 @@ body::-webkit-scrollbar-thumb{
   background-color: #45687f;
   border-radius: 10px;
 }
+div, a, p, table, td, th, a, img, span, svg,ul,li,section, footer, header,canvas,html, path{
+  touch-action: pan-y;
+}
+svg, path{
+  touch-action: none;
+}
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
   monospace;
@@ -63,4 +69,5 @@ code {
  #root{
   touch-action: pan-y;
  }
+
 }

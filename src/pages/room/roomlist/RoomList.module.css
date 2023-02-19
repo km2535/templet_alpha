@@ -1,3 +1,6 @@
+.container{
+  min-height: 700px;
+}
 .mainTitle{
   font-family: var(--main-kr-font);
   font-size: 40px;
@@ -20,7 +23,7 @@
   display: flex;
   flex-wrap: wrap;
   width: 98%;
-  margin: 0 auto;
+  margin: 20px auto;
 }
 @media screen and (max-width : 768px){
   .subTitle{

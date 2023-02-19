@@ -24,7 +24,7 @@ const checkAdmin = async (USER, setUser) => {
           ? setUser({
               ID: USER?.id,
               USER_EMAIL: USER.email || "",
-              NAME: USER?.name || "",
+              NAME: "관리자",
               PROFILE: USER?.picture || "",
               IsAdmin: true,
             })

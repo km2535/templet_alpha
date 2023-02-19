@@ -49,7 +49,7 @@ export default function Navbar({ option }) {
           <div className={styles.logoContainer} onClick={() => navigate("/")}>
             <img
               className={styles.img}
-              src={process.env.PUBLIC_URL + "/images/logo_white.png"}
+              src={process.env.REACT_APP_API_URL + "/images/logo_white.png"}
               alt=""
             />
           </div>
@@ -63,8 +63,8 @@ export default function Navbar({ option }) {
                 className={styles.img}
                 src={
                   navibarStyle
-                    ? `${process.env.PUBLIC_URL}/images/logo_white.png`
-                    : `${process.env.PUBLIC_URL}/images/logo.png`
+                    ? `${process.env.REACT_APP_API_URL}/images/logo_white.png`
+                    : `${process.env.REACT_APP_API_URL}/images/logo.png`
                 }
                 alt=""
               />

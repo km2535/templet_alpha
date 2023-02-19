@@ -125,6 +125,7 @@
 }
 .fileList{
   display: flex;
+  flex-wrap: wrap;
 }
 .img{
   max-width: 600px;
@@ -146,4 +147,61 @@
   font-size: 18px;
   font-family: var(--main-kr-font);
   height: 250px;
+}
+
+@media screen and (max-width:1200px){
+  .container{
+    width: 1000px;
+  }
+  .titleInput{
+    width: 100%;
+    font-size: 14px;
+  }
+}
+@media screen and (max-width:1024px){
+  .container{
+    width: 800px;
+  }
+}
+@media screen and (max-width:768px){
+  .container{
+    width: 100%;
+  }
+  .tdTitle,.thTitle{
+    width: 40%;
+  }
+    .titleInput{
+    font-size: 12px;
+    width: 98%;
+  }
+  .tdWriter, .thWriter{
+    width: 30%;
+  }
+  .downloadTitle{
+    font-size: 14px;
+    width: 30%;
+  }
+  .fileContent{
+    margin-right: 5px;
+  }
+  .files{
+    font-size: 12px;
+  }
+  .detailInput{
+    font-size: 16px;
+  }
+  .img{
+    max-width: 300px;
+    max-height: 300px;
+  }
+
+  .theadTr{
+    font-size: 14px;
+  }
+  .tdWriter,.tdReadCnt{
+    font-size: 14px;
+  }
+  .tdDate{
+    font-size: 10px;
+  }
 }

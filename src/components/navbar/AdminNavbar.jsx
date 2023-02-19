@@ -20,7 +20,7 @@ export default function AdminNavbar() {
       >
         <img
           className={styles.img}
-          src={process.env.PUBLIC_URL + "/images/logo.png"}
+          src={process.env.REACT_APP_API_URL + "/images/logo.png"}
           alt=""
         />
       </div>

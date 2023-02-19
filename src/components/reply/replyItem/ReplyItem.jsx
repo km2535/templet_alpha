@@ -2,20 +2,45 @@ import React from "react";
 import { useEffect } from "react";
 import { v4 as uuidv4 } from "uuid";
 import { useState } from "react";
+import { AiOutlineClose } from "react-icons/ai";
 import styles from "./ReplyItem.module.css";
-export default function ReplyItem({ item }) {
+import { removeReply } from "../../../api/reply/removeReply";
+import { removeReplyImg } from "../../../api/reply/removeReplyImg";
+import { removeReplyFile } from "../../../api/reply/removeReplyFile";
+import { readReplyList } from "../../../api/reply/readReplyList";
+
+export default function ReplyItem({ item, setReply }) {
   const [fileUrl, setFileUrl] = useState([]);
   const [imgUrl, setImgUrl] = useState([]);
-  const { ID, WRITER, DESCRIPTION, FILE_URLS, IMAGE_URLS, DATE } = item;
+  const { ID, WRITER, DESCRIPTION, FILE_URLS, IMAGE_URLS, DATE, REPLY_ID } =
+    item;
   useEffect(() => {
     FILE_URLS && setFileUrl(FILE_URLS.split(","));
     IMAGE_URLS && setImgUrl(IMAGE_URLS.split(","));
   }, [FILE_URLS, IMAGE_URLS]);
+  const deleteHandler = () => {
+    if (window.confirm("댓글을 삭제하시겠습니까?")) {
+      removeReply(item).then(() => {
+        removeReplyFile(item)
+          .then(() => removeReplyImg(item))
+          .then(() => {
+            setTimeout(() => {
+              readReplyList(ID, setReply);
+            }, 800);
+          });
+      });
+    }
+  };
   return (
     <div className={styles.container}>
       <div className={styles.title}>
         <div className={styles.WRITER}>{WRITER}</div>
-        <div className={styles.DATE}>{DATE}</div>
+        <div className={styles.DATE}>
+          <div className={styles.DATEDATA}>{DATE}</div>
+          <div className={styles.DATEDELETE}>
+            <AiOutlineClose onClick={deleteHandler} />
+          </div>
+        </div>
       </div>
       <div className={styles.DESCRIPTION}>{DESCRIPTION}</div>
       <div className={styles.download}>
@@ -28,7 +53,7 @@ export default function ReplyItem({ item }) {
               className={styles.file}
               key={uuidv4()}
               type="media_type"
-              href={`${process.env.REACT_APP_URL_REPLY}/files/${ID}/${file}`}
+              href={`${process.env.REACT_APP_URL_REPLY}/files/${REPLY_ID}/${file}`}
               download
             >
               {file}
@@ -44,7 +69,7 @@ export default function ReplyItem({ item }) {
               <img
                 key={uuidv4()}
                 className={styles.img}
-                src={`${process.env.REACT_APP_URL_REPLY}/images/${ID}/${img}`}
+                src={`${process.env.REACT_APP_URL_REPLY}/images/${REPLY_ID}/${img}`}
                 alt=""
               />
             ))}

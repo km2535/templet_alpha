@@ -10,7 +10,7 @@ export default function Intro() {
         <div
           className={styles.img}
           style={{
-            backgroundImage: `url(${process.env.PUBLIC_URL}/images/lobby.jpg)`,
+            backgroundImage: `url(${process.env.REACT_APP_API_URL}/images/lobby.jpg)`,
           }}
         ></div>
       </div>
@@ -24,7 +24,12 @@ export default function Intro() {
               적으시면 고객들에게 더욱 깊은 감동을 전해주실 수 있습니다.
             </div>
           </div>
-          <div className={styles.linkDesc} onClick={() => navigate("room")}>
+          <div
+            className={styles.linkDesc}
+            onClick={() =>
+              navigate(process.env.REACT_APP_API_SUB_OPTION_TWO_URL)
+            }
+          >
             <div>MORE VIEW</div>
           </div>
         </div>

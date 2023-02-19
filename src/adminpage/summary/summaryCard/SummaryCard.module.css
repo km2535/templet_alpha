@@ -19,14 +19,15 @@
   overflow-y: scroll;
 }
 .lists::-webkit-scrollbar{
-  width: 10px;
+  width: 5px;
+  height: 5px;
 }
 .lists::-webkit-scrollbar-track{
   background-color: #ffffff;
 }
 .lists::-webkit-scrollbar-thumb{
   background-color: #e3f1ff;
-  border-radius: 10px;
+  border-radius: 5px;
 }
 .list{
   font-family: var(--main-kr-font);

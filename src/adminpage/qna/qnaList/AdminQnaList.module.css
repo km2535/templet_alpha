@@ -1,17 +1,35 @@
 .container{
-  width: 1200px;
   display: flex;
+  height: auto;
   flex-direction: column;
-  margin: 0 auto;
 }
 .addIcon{
-  text-align: right;
+  display: flex;
+  width: 100%;
+  justify-content: flex-end;
+  margin-bottom: 20px;
 }
 .icon{
-  width: max-content;
   cursor: pointer;
-  font-size: 20px;
+  font-size: 30px;
 }
 .icon:hover{
   color: var(--main-font-strong-color);
+}
+@media screen and (max-width:1200px){
+
+}
+@media screen and (max-width:1024px){
+  .addIcon{
+   width: 95%;
+  }
+  
+}
+@media screen and (max-width:768px){
+  .addIcon{
+   width: 90%;
+  }
+  .icon{
+    font-size: 25px;
+  }
 }

@@ -1,15 +1,53 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import LandText from "../landText/LandText";
 import styles from "./LandProvide.module.css";
 
 export default function LandProvide() {
+  const [first, setFirst] = useState(false);
+  const [second, setSecond] = useState(false);
+  const [thirth, setThirth] = useState(false);
+  useEffect(() => {
+    const first = document.getElementById("first");
+    const second = document.getElementById("second");
+    const thirth = document.getElementById("thirth");
+    const showTitle = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((ent) => setFirst(ent.isIntersecting));
+      },
+      {
+        rootMargin: "0px",
+        threshold: 0.5,
+      }
+    );
+    const showSecond = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((ent) => setSecond(ent.isIntersecting));
+      },
+      {
+        rootMargin: "0px",
+        threshold: 0.5,
+      }
+    );
+    const showThirth = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((ent) => setThirth(ent.isIntersecting));
+      },
+      {
+        rootMargin: "0px",
+        threshold: 0.5,
+      }
+    );
+    showTitle.observe(first);
+    showSecond.observe(second);
+    showThirth.observe(thirth);
+  }, []);
   return (
     <div className={styles.container}>
-      <div className={styles.first}>
+      <div className={first ? styles.first : styles.none} id="first">
         <div className={styles.img}>
           <img src={`${process.env.REACT_APP_API_URL}/images/bg3.jpg`} alt="" />
         </div>
-        <div className={styles.description}>
+        <div className={styles.description} id="first_description">
           <div className={styles.title}>핸드드립 커피제공</div>
           <div className={styles.subTitle}>
             <div>아침을 풍부한 크리마로 여행의 진미를</div>
@@ -18,7 +56,7 @@ export default function LandProvide() {
         </div>
       </div>
       <LandText text={"FACILITY"} position={-300} />
-      <div className={styles.second}>
+      <div className={second ? styles.second : styles.noneSecond} id="second">
         <div className={styles.description}>
           <div className={styles.title}>풍부한 주변 볼거리리</div>
           <div className={styles.subTitle}>
@@ -30,7 +68,7 @@ export default function LandProvide() {
           <img src={`${process.env.REACT_APP_API_URL}/images/bg2.jpg`} alt="" />
         </div>
       </div>
-      <div className={styles.thirth}>
+      <div className={thirth ? styles.thirth : styles.none} id="thirth">
         <div className={styles.img}>
           <img src={`${process.env.REACT_APP_API_URL}/images/bg4.jpg`} alt="" />
         </div>

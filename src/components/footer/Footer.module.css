@@ -1,6 +1,5 @@
 .container{
   position: relative;
-  top: 180px;
   width: 100%;
   height: 200px;
   background-color: var(--sideNavbar-bg-agategrey);
@@ -8,7 +7,8 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  font-family: var(--main-kr-font)
+  font-family: var(--main-kr-font);
+  touch-action: none;
 }
 .topInfo{
   display: flex;
@@ -16,11 +16,14 @@
   height: 30px;
   border-bottom: 1px solid var(--sideNavbar-bg-pleinair);
   margin: 0 auto 20px;
+  touch-action: none;
 }
 .personal,.email,.use{
+  touch-action: none;
   cursor: pointer;
 }
 .personal::after, .email::after{
+  touch-action: none;
   content: "|";
   margin: 0 20px 0 20px;
 }
@@ -30,12 +33,15 @@
   margin: 0 auto;
   justify-content: space-around;
   align-items: center;
+  touch-action: none;
 }
 .sideInfo{
   display: flex;
+  touch-action: none;
   flex-direction: column;
 }
 .menu1, .menu2,.menu3,.menu4{
+  touch-action: none;
   cursor: pointer;
 }
 .menu1::after, .menu2::after, .menu3::after{
@@ -43,23 +49,29 @@
   margin: 0 20px 0 20px;
 }
 .Info{
+  touch-action: none;
   font-size: 12px;
 }
 .company{
+  touch-action: none;
   font-size: 16px;
 }
 .subNabar{
+  touch-action: none;
   display: flex;
   margin-bottom: 10px;
 }
 .snsContainer{
+  touch-action: none;
   display: flex;
 }
 .logo,.img{
+  touch-action: none;
   width: 150px;
 }
 .snsContainer{
   font-size: 30px;
+  touch-action: none;
   justify-content: space-around;
 }
 

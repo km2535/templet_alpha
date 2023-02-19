@@ -37,6 +37,9 @@ import ServiceFirst from "./pages/service/ServiceFirst/ServiceFirst";
 import ServiceDetail from "./pages/service/ServiceDetail/ServiceDetail";
 import Room from "./pages/room/Room";
 import RoomDetail from "./pages/room/roomDetail/RoomDetail";
+import Personal from "./pages/policy/personal/Personal";
+import Email from "./pages/policy/email/Email";
+import Use from "./pages/policy/use/Use";
 
 const router = createBrowserRouter([
   {
@@ -123,6 +126,24 @@ const router = createBrowserRouter([
                 element: <AdminQnaEdit />,
               },
             ],
+          },
+          {
+            path:
+              process.env.REACT_APP_API_SUB_URL +
+              process.env.REACT_APP_API_PERSONAL_URL,
+            element: <Personal />,
+          },
+          {
+            path:
+              process.env.REACT_APP_API_SUB_URL +
+              process.env.REACT_APP_API_EMAIL_URL,
+            element: <Email />,
+          },
+          {
+            path:
+              process.env.REACT_APP_API_SUB_URL +
+              process.env.REACT_APP_API_USE_URL,
+            element: <Use />,
           },
         ],
       },

@@ -1,19 +1,20 @@
 .wrapper{
   width: 100vw;
-  overflow-x: hidden;
-  touch-action: pan-y;
+  overflow: hidden;
   user-select: none;
+  touch-action: none;
 }
 .container{
   position: absolute;
   display: flex;
+  overflow: hidden;
   flex-direction: row;
-  touch-action: pan-y;
+  touch-action: none;
 }
 .text{
   font-size: 750px;
   color: #F1F1F1;
-  touch-action: pan-y;
+  touch-action: none;
 }
 
 @media screen and (max-width:1248px){

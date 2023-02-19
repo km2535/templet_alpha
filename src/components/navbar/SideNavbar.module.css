@@ -8,6 +8,7 @@
   z-index: 99;
   background-color: var(--sideNavbar-bg-graysand); 
   transition: all 1s;
+  touch-action: pan-y;
 }
 .container{
   width: 100vw;
@@ -18,6 +19,7 @@
   top: 0;
   z-index: 99;
   background-color: var(--sideNavbar-bg-graysand);
+  touch-action: pan-y;
   transition: all 1s;
 }
 .close{
@@ -26,6 +28,7 @@
   top: 20px;
   font-size: 24px;
   color: var(--sideNavbar-font-graysand);
+  touch-action: pan-y;
   cursor: pointer;
 }
 .list{
@@ -34,6 +37,7 @@
   list-style: none;
   height: 100vh;
   justify-content: space-around;
+  touch-action: pan-y;
   align-items: center;
 }
 .option1,
@@ -47,6 +51,7 @@
   font-family: var(--main-eg-font);
   color: var(--sideNavbar-font-graysand);
   text-transform: uppercase;
+  touch-action: pan-y;
   font-size: 24px;
 }
 .option1,
@@ -54,6 +59,7 @@
 .option3,
 .option4,
 .option5{
+  touch-action: pan-y;
   cursor: pointer;
 }
 .option1:hover,
@@ -63,25 +69,30 @@
 .option5:hover,
 .option6:hover,
 .option7:hover{
+  touch-action: pan-y;
   text-decoration: underline;
 }
 .options{
+  touch-action: pan-y;
   text-align: center;
 }
 .snb{
   width: 300px;
   display: flex;
   justify-content: space-between;
+  touch-action: pan-y;
   margin-top: 10px;
 }
 .option6, .option7{
   font-size: 22px;
+  touch-action: pan-y;
   cursor: pointer;
 }
 .sns{
   font-size: 24px;
   text-align: center;
   font-family: var(--main-eg-font);
+  touch-action: pan-y;
   text-transform: uppercase;
   color: var(--sideNavbar-font-graysand);
 }
@@ -91,6 +102,7 @@
   width: 300px;
   font-size: 30px;
   margin-top: 30px;
+  touch-action: pan-y;
 }
 .instar:hover, .facebook:hover, .naver:hover{
   color: var(--main-font-strong-color);
@@ -104,6 +116,7 @@
   font-family: var(--main-kr-font);
   font: 500;
   font-size: 20px;
+  touch-action: pan-y;
   cursor: pointer;
 }
 

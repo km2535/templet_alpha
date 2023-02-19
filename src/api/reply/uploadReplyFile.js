@@ -1,8 +1,8 @@
 export const uploadReplyFile = async (file, imgFiles, board) => {
-  const { ID } = board;
+  const { REPLY_ID } = board;
   for (let i = 0; i < file.length; i++) {
     const formData = new FormData();
-    formData.append("fileId", ID);
+    formData.append("fileId", REPLY_ID);
     formData.append("path", "files");
     formData.append("filename", file[i]?.name);
     formData.append("userfile", file[i]);
@@ -13,7 +13,7 @@ export const uploadReplyFile = async (file, imgFiles, board) => {
   }
   for (let i = 0; i < imgFiles.length; i++) {
     const formData = new FormData();
-    formData.append("fileId", ID);
+    formData.append("fileId", REPLY_ID);
     formData.append("path", "images");
     formData.append("filename", imgFiles[i]?.name);
     formData.append("userfile", imgFiles[i]);

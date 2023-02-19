@@ -20,14 +20,15 @@
   overflow-y: scroll;
 }
 .service::-webkit-scrollbar{
-  width: 10px;
+  width: 5px;
+  height: 5px;
 }
 .service::-webkit-scrollbar-track{
    background-color: var(--main-font-bg-color );
 }
 .service::-webkit-scrollbar-thumb{
   background-color: var(--main-font-color);
-  border-radius: 10px;
+  border-radius: 5px;
 }
 .mainTitle{
   font-family: var(--main-kr-font);
@@ -50,4 +51,30 @@
 }
 .icon:hover{
   color: var(--main-font-color); 
+}
+
+@media screen and (max-width:1280px){
+
+}
+@media screen and (max-width:1150px){
+  .icon{
+    font-size: 35px;
+  }
+}
+@media screen and (max-width:1024px){
+  
+}
+@media screen and (max-width:960px){
+  .icon{
+    font-size: 30px;
+  }
+}
+@media screen and (max-width:768px){
+  .title{
+  display: none;
+  }
+  .service{
+    width: 95%;
+    margin: 0 auto;
+  }
 }
