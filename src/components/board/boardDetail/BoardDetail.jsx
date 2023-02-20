@@ -25,10 +25,8 @@ export default function BoardDetail({ isAdmin }) {
   const [boardItem, setBoardItem] = useState([]);
   const [description, setDescription] = useState([]);
   useEffect(() => {
-    readBoardDetail({ ID, setBoard }).then(
-      () =>
-        isAdmin ||
-        updateBoardReadCnt({ ID, READ_CNT: Number(READ_CNT) + 1, DATE })
+    readBoardDetail({ ID, setBoard }).then(() =>
+      updateBoardReadCnt({ ID, READ_CNT: Number(READ_CNT) + 1, DATE })
     );
   }, [ID, READ_CNT, DATE, isAdmin]);
 

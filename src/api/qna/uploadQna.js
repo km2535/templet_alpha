@@ -1,4 +1,4 @@
-export const uploadQna = (qna) => {
+export const uploadQna = async (qna) => {
   const { ID, WRITER, PASSWORD, TITLE, DESCRIPTION, IMAGE_URLS, FILE_URLS } =
     qna;
   const formData = new FormData();
@@ -10,7 +10,7 @@ export const uploadQna = (qna) => {
   formData.append("IMAGE_URLS", IMAGE_URLS);
   formData.append("FILE_URLS", FILE_URLS);
   formData.append("READ_CNT", 0);
-  fetch(`${process.env.REACT_APP_API_QNA_URL}/addQna.php`, {
+  await fetch(`${process.env.REACT_APP_API_QNA_URL}/addQna.php`, {
     method: "POST",
     body: formData,
   })

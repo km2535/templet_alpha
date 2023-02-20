@@ -9,7 +9,7 @@ export default function BoardListItems({ qna, notice, page, totalPage }) {
   const [boards, setBoards] = useState([]);
   useEffect(() => {
     const startPage = (page - 1) * 10;
-    const endPage = page * 10;
+    const endPage = 10;
     notice && readBoards(startPage, endPage, setBoards);
     qna && readQnas(startPage, endPage, setBoards);
   }, [notice, page, qna]);

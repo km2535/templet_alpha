@@ -170,9 +170,9 @@
   .tdTitle,.thTitle{
     width: 40%;
   }
-    .titleInput{
-    font-size: 12px;
-    width: 98%;
+  .titleInput{
+  font-size: 12px;
+  width: 98%;
   }
   .tdWriter, .thWriter{
     width: 30%;
@@ -191,8 +191,8 @@
     font-size: 16px;
   }
   .img{
-    max-width: 300px;
-    max-height: 300px;
+    max-width: 200px;
+    max-height: 200px;
   }
 
   .theadTr{

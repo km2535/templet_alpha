@@ -3,6 +3,8 @@
   flex-wrap: wrap;
   margin-top: 100px;
   justify-content: center;
+  margin-bottom: 20px;
+
 }
 .products, .service, .notice, .qna{
   padding: 10px;
@@ -35,10 +37,11 @@
   .container{
     margin-top: 10px;
   }
-     .products, .service, .notice, .qna{
-    width:80%;
-  }
 }
 @media screen and (max-width:768px){
-  
+  .products, .service, .notice, .qna{
+    width:45%;
+    padding: 5px;
+    font-size: 24px;
+  }
 }

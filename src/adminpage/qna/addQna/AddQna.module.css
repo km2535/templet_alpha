@@ -30,7 +30,7 @@
   width: 50%;
 }
 .thWriter,.tdWriter{
-  width: 15%;
+  width: 25%;
 }
 .thReadCnt ,.tdReadCnt{
   width: 15%;
@@ -217,5 +217,9 @@
   }
   .detailInput{
     font-size: 16px;
+  }
+  .img{
+    max-width: 200px;
+    max-height: 200px;
   }
 }

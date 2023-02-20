@@ -80,5 +80,18 @@
   }
 }
 @media screen and (max-width:768px){
-  
+  .container{
+    width: 98%;
+    height: 300px;
+  }
+  .total{
+    font-size: 30px;
+    font-weight: bold;
+  }
+  .list{
+    font-size: 14px;
+  }
+  .viewmore{
+    font-size: 16px;
+  }
 }

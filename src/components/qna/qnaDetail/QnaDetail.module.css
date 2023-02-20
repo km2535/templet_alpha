@@ -112,6 +112,9 @@
   .thWriter,.tdWriter{
     width: 15%;
   }
+  .tdWriter{
+    font-size: 12px;
+  }
   .thReadCnt ,.tdReadCnt{
     width: 10%;
   }

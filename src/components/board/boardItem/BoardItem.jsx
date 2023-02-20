@@ -23,6 +23,8 @@ export default function BoardItem({
   const [pw, setPw] = useState("");
   const [inputPw, setInputPw] = useState("");
   const [passInput, setPassInput] = useState(false);
+  const [userEncycrpto, setUserEncycrpto] = useState(WRITER);
+
   const clickHandler = (e) => {
     const { id } = e.target;
     notice &&
@@ -62,6 +64,19 @@ export default function BoardItem({
       setBoardNum(boardNumber);
     }
   }, [totalPage, index, page]);
+  useEffect(() => {
+    const userId = WRITER.slice(0, WRITER.indexOf("@"));
+    if (!notice) {
+      setUserEncycrpto(
+        WRITER.includes("@")
+          ? WRITER.slice(0, WRITER.indexOf("@"))
+              .slice(-userId.length, 2)
+              .padEnd(userId.length, "*")
+          : WRITER.slice(-WRITER.length, 2).padEnd(WRITER.length, "*")
+      );
+    }
+  }, [WRITER, notice]);
+
   return (
     <>
       {passInput && (
@@ -96,7 +111,7 @@ export default function BoardItem({
         <td className={styles.tdTitle} id={ID} onClick={clickHandler}>
           {TITLE}
         </td>
-        <td className={styles.tdWriter}>{WRITER}</td>
+        <td className={styles.tdWriter}>{userEncycrpto}</td>
         <td className={styles.tdReadCnt}>{READ_CNT}</td>
         <td className={styles.tdDate}>{DATE}</td>
       </tr>

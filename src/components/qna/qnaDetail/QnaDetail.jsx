@@ -23,12 +23,10 @@ export default function QnaDetail({ isAdmin }) {
   const [boardItem, setBoardItem] = useState([]);
   const [description, setDescription] = useState([]);
   useEffect(() => {
-    readQnaDetail({ ID, setBoard }).then(
-      () =>
-        isAdmin ||
-        updateQnaReadCnt({ ID, READ_CNT: Number(READ_CNT) + 1, DATE })
+    readQnaDetail({ ID, setBoard }).then(() =>
+      updateQnaReadCnt({ ID, READ_CNT: Number(READ_CNT) + 1, DATE })
     );
-  }, [ID, READ_CNT, DATE, isAdmin]);
+  }, [ID, READ_CNT, DATE]);
   useEffect(() => {
     setBoardItem(board?.pop());
   }, [board]);

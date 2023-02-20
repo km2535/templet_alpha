@@ -5,7 +5,8 @@
   margin: 0 auto;
 }
 .table{
-  border-collapse: collapse
+  border-collapse: collapse;
+  min-height: 556px;
 }
 .thead,.tbody{
   border-bottom: 2px solid #000;
@@ -104,5 +105,8 @@
  }
  .next, .prev{
   margin: 0 8px;
-}
+  }
+  .table{
+    min-height: 456px;
+  }
 }

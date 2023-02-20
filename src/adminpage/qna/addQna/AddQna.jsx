@@ -11,6 +11,7 @@ import crypto from "crypto-js";
 import { uploadQnaFile } from "../../../api/qna/uploadQnaFile";
 import { uploadQna } from "../../../api/qna/uploadQna";
 import { useAuthContext } from "../../../context/AuthContextProvider";
+import { sendMail } from "../../../api/email/sendMail";
 
 export default function AddQna() {
   const navigate = useNavigate();
@@ -29,7 +30,7 @@ export default function AddQna() {
     setBoard((prev) => ({
       ...prev,
       ID: ID,
-      WRITER: user?.NAME || user?.USER_EMAIL || "",
+      WRITER: user?.USER_EMAIL || user?.NAME || "",
     }));
   }, [user?.NAME, user?.USER_EMAIL]);
 
@@ -122,7 +123,9 @@ export default function AddQna() {
   const boardSubmit = (e) => {
     e.preventDefault();
     uploadQnaFile(file, imgFiles, board);
-    uploadQna(board);
+    uploadQna(board).then(() => {
+      sendMail(board);
+    });
     alert("문의 내용이 추가되었습니다.");
     navigate(-1);
   };
@@ -156,7 +159,7 @@ export default function AddQna() {
                   id="WRITER"
                   className={styles.titleInput}
                   defaultValue={board.WRITER}
-                  placeholder="이름을 입력하세요"
+                  placeholder="답변 받을 메일"
                   onChange={changeHandler}
                   required
                 />
